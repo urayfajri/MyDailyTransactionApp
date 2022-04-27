@@ -8,21 +8,51 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--All Transactions-->
+        <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyDailyTransactionApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JV3-Es-luJ">
+                                <rect key="frame" x="191" y="379" width="34" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="A"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="All Transactions" image="list.bullet" catalog="system" id="Efr-Vy-KU2"/>
+                    <navigationItem key="navigationItem" title="Home" id="0aY-J5-4Hx">
+                        <barButtonItem key="rightBarButtonItem" image="plus.app" catalog="system" id="zlc-B4-J5N">
+                            <connections>
+                                <segue destination="LnA-ur-PML" kind="show" id="kI1-QL-m3k"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1157" y="-543"/>
+            <point key="canvasLocation" x="2253.6231884057975" y="-543.08035714285711"/>
+        </scene>
+        <!--Add Transaction-->
+        <scene sceneID="XBy-J4-Uux">
+            <objects>
+                <viewController storyboardIdentifier="add_transaction" hidesBottomBarWhenPushed="YES" id="LnA-ur-PML" customClass="AddTransactionViewController" customModule="MyDailyTransactionApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZNE-QS-YDw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="iDz-1o-Qs9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Transaction" id="0kc-VP-4qA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DKo-5c-uSV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3581" y="-104"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="D7J-St-4ay">
@@ -35,34 +65,90 @@
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Trr-CZ-H4S"/>
-                        <segue destination="gXW-wi-iLD" kind="relationship" relationship="viewControllers" id="iOq-rx-9dk"/>
+                        <segue destination="uKA-fx-EZA" kind="relationship" relationship="viewControllers" id="Trr-CZ-H4S"/>
+                        <segue destination="yEj-JB-Hqm" kind="relationship" relationship="viewControllers" id="iOq-rx-9dk"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Y3-d6-b8o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-193" y="65"/>
         </scene>
-        <!--Calender-->
+        <!--Home-->
         <scene sceneID="Q9g-ZU-WQD">
             <objects>
                 <viewController id="gXW-wi-iLD" customClass="CalenderViewController" customModule="MyDailyTransactionApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OXF-Vo-aWQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HeU-qg-oCG">
+                                <rect key="frame" x="201" y="344" width="34" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="B"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="1EM-3M-YPm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Calender" image="calendar" catalog="system" id="6WB-2a-cV1"/>
+                    <navigationItem key="navigationItem" title="Home" id="hNN-4c-ePx">
+                        <barButtonItem key="rightBarButtonItem" image="plus.app" catalog="system" id="kj0-tY-laP">
+                            <connections>
+                                <segue destination="LnA-ur-PML" kind="show" id="Nqd-zq-F7f"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EFa-XC-EKW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1157" y="422"/>
+            <point key="canvasLocation" x="2254" y="422"/>
+        </scene>
+        <!--All Transactions-->
+        <scene sceneID="5b1-F8-OUN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uKA-fx-EZA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="All Transactions" image="list.bullet" catalog="system" id="Efr-Vy-KU2"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="z58-hO-2AA">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="KKl-IJ-lW7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZpT-VQ-ERR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1156.521739130435" y="-543.08035714285711"/>
+        </scene>
+        <!--Calender-->
+        <scene sceneID="2al-1y-ObQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yEj-JB-Hqm" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Calender" image="calendar" catalog="system" id="6WB-2a-cV1"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AMW-4e-EqV">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gXW-wi-iLD" kind="relationship" relationship="rootViewController" id="imw-Fw-Q0g"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lA1-aP-Lfr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1156.521739130435" y="421.875"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="kI1-QL-m3k"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
+        <image name="plus.app" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

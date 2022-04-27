@@ -19,6 +19,7 @@
 		2001586C2817B49500D02A35 /* MyDailyTransactionAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2001586B2817B49500D02A35 /* MyDailyTransactionAppUITestsLaunchTests.swift */; };
 		2001587E2819272100D02A35 /* CustomElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2001587D2819272100D02A35 /* CustomElements.swift */; };
 		20922859281929BE0074CCD9 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20922858281929BE0074CCD9 /* CalenderViewController.swift */; };
+		2092285B28192C830074CCD9 /* AddTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092285A28192C830074CCD9 /* AddTransactionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		2001586B2817B49500D02A35 /* MyDailyTransactionAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDailyTransactionAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2001587D2819272100D02A35 /* CustomElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomElements.swift; sourceTree = "<group>"; };
 		20922858281929BE0074CCD9 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
+		2092285A28192C830074CCD9 /* AddTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			children = (
 				200158492817B49500D02A35 /* ViewController.swift */,
 				20922858281929BE0074CCD9 /* CalenderViewController.swift */,
+				2092285A28192C830074CCD9 /* AddTransactionViewController.swift */,
 			);
 			path = viewController;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				2001587E2819272100D02A35 /* CustomElements.swift in Sources */,
 				200158462817B49500D02A35 /* AppDelegate.swift in Sources */,
 				200158502817B49500D02A35 /* MyDailyTransactionApp.xcdatamodeld in Sources */,
+				2092285B28192C830074CCD9 /* AddTransactionViewController.swift in Sources */,
 				200158482817B49500D02A35 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
