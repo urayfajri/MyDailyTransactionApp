@@ -32,10 +32,10 @@ class CustomElements {
         textview.layer.borderColor = UIColor.systemGray6.cgColor
     }
     
-    static func styleFilledButton(_ button:UIButton) {
+    static func styleFilledButtonAdd(_ button:UIButton) {
         // Filled rounded corner style
         button.layer.cornerRadius = 25.0
-        button.tintColor = UIColor.systemYellow
+        button.tintColor = UIColor.systemGreen
     }
     
 }
