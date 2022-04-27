@@ -17,6 +17,7 @@
 		200158602817B49500D02A35 /* MyDailyTransactionAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2001585F2817B49500D02A35 /* MyDailyTransactionAppTests.swift */; };
 		2001586A2817B49500D02A35 /* MyDailyTransactionAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200158692817B49500D02A35 /* MyDailyTransactionAppUITests.swift */; };
 		2001586C2817B49500D02A35 /* MyDailyTransactionAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2001586B2817B49500D02A35 /* MyDailyTransactionAppUITestsLaunchTests.swift */; };
+		2001587E2819272100D02A35 /* CustomElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2001587D2819272100D02A35 /* CustomElements.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		200158652817B49500D02A35 /* MyDailyTransactionAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyDailyTransactionAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		200158692817B49500D02A35 /* MyDailyTransactionAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDailyTransactionAppUITests.swift; sourceTree = "<group>"; };
 		2001586B2817B49500D02A35 /* MyDailyTransactionAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDailyTransactionAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2001587D2819272100D02A35 /* CustomElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomElements.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +103,10 @@
 		200158442817B49500D02A35 /* MyDailyTransactionApp */ = {
 			isa = PBXGroup;
 			children = (
+				2001587B2819262B00D02A35 /* Helpers */,
+				2001587A2819257D00D02A35 /* viewController */,
 				200158452817B49500D02A35 /* AppDelegate.swift */,
 				200158472817B49500D02A35 /* SceneDelegate.swift */,
-				200158492817B49500D02A35 /* ViewController.swift */,
 				2001584B2817B49500D02A35 /* Main.storyboard */,
 				200158512817B49500D02A35 /* Assets.xcassets */,
 				200158532817B49500D02A35 /* LaunchScreen.storyboard */,
@@ -128,6 +131,22 @@
 				2001586B2817B49500D02A35 /* MyDailyTransactionAppUITestsLaunchTests.swift */,
 			);
 			path = MyDailyTransactionAppUITests;
+			sourceTree = "<group>";
+		};
+		2001587A2819257D00D02A35 /* viewController */ = {
+			isa = PBXGroup;
+			children = (
+				200158492817B49500D02A35 /* ViewController.swift */,
+			);
+			path = viewController;
+			sourceTree = "<group>";
+		};
+		2001587B2819262B00D02A35 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2001587D2819272100D02A35 /* CustomElements.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2001584A2817B49500D02A35 /* ViewController.swift in Sources */,
+				2001587E2819272100D02A35 /* CustomElements.swift in Sources */,
 				200158462817B49500D02A35 /* AppDelegate.swift in Sources */,
 				200158502817B49500D02A35 /* MyDailyTransactionApp.xcdatamodeld in Sources */,
 				200158482817B49500D02A35 /* SceneDelegate.swift in Sources */,
