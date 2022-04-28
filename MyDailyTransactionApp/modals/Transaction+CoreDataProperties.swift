@@ -20,6 +20,7 @@ extension Transaction {
     @NSManaged public var transactionDate: Date?
     @NSManaged public var transactionDescription: String?
     @NSManaged public var createdAt: Date?
+    @NSManaged public var transactionBudget: Double
     @NSManaged public var incomes: NSSet?
     @NSManaged public var expenses: NSSet?
 
