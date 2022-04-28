@@ -26,7 +26,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         transactionTableView.dataSource = self
         
         emptyList = UITextView()
-        dummyData()
+        // dummyData()
         getAllTransactions()
     }
     
