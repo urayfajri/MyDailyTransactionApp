@@ -12,4 +12,6 @@ class ExpenseCell: UICollectionViewCell {
     @IBOutlet weak var expenseName: UILabel!
     @IBOutlet weak var expenseAmount: UILabel!
     @IBOutlet weak var expenseNeeds: UILabel!
+    @IBOutlet weak var expenseAmountSymbol: UIImageView!
+    @IBOutlet weak var expenseNeedsSymbol: UIImageView!
 }

@@ -12,4 +12,6 @@ class IncomeCell: UICollectionViewCell {
     @IBOutlet weak var incomeName: UILabel!
     @IBOutlet weak var incomeAmount: UILabel!
     @IBOutlet weak var incomeSource: UILabel!
+    @IBOutlet weak var incomeAmountSymbol: UIImageView!
+    @IBOutlet weak var incomeSourceSymbol: UIImageView!
 }

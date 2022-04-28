@@ -498,8 +498,10 @@
                                                                 <size key="customSize" width="177" height="117"/>
                                                                 <connections>
                                                                     <outlet property="incomeAmount" destination="pzD-5S-XMp" id="1AJ-l2-g6f"/>
+                                                                    <outlet property="incomeAmountSymbol" destination="exd-CC-JRu" id="1h6-Ce-RK4"/>
                                                                     <outlet property="incomeName" destination="oAR-6W-gxa" id="tCa-E7-BO9"/>
                                                                     <outlet property="incomeSource" destination="3ka-CM-Dmg" id="i7D-6Y-6pb"/>
+                                                                    <outlet property="incomeSourceSymbol" destination="Z2u-Fm-LYn" id="KGl-Uf-aYn"/>
                                                                 </connections>
                                                             </collectionViewCell>
                                                         </cells>
@@ -608,8 +610,10 @@
                                                                 <size key="customSize" width="177" height="117"/>
                                                                 <connections>
                                                                     <outlet property="expenseAmount" destination="EJ1-e7-MXW" id="ROu-hm-Img"/>
+                                                                    <outlet property="expenseAmountSymbol" destination="ISF-L5-Lsb" id="Kzp-rf-sLX"/>
                                                                     <outlet property="expenseName" destination="IIc-rr-cjh" id="uxM-GG-O2I"/>
                                                                     <outlet property="expenseNeeds" destination="jzY-eh-NF7" id="Akn-96-XRB"/>
+                                                                    <outlet property="expenseNeedsSymbol" destination="9f5-RY-ZhD" id="zRZ-xv-Ewg"/>
                                                                 </connections>
                                                             </collectionViewCell>
                                                         </cells>

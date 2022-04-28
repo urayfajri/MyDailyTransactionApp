@@ -77,6 +77,11 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
             
             cell.backgroundColor = .systemGreen
             cell.layer.cornerRadius = 15
+            cell.incomeName.textColor = .white
+            cell.incomeAmount.textColor = .white
+            cell.incomeSource.textColor = .white
+            cell.incomeAmountSymbol.tintColor = .white
+            cell.incomeSourceSymbol.tintColor = .white
             
             cell.incomeName.text = incomes.incomeName
             cell.incomeAmount.text = incomes.incomeAmount
@@ -89,6 +94,11 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
             
             cell.backgroundColor = .systemRed
             cell.layer.cornerRadius = 15
+            cell.expenseName.textColor = .white
+            cell.expenseAmount.textColor = .white
+            cell.expenseNeeds.textColor = .white
+            cell.expenseNeedsSymbol.tintColor = .white
+            cell.expenseAmountSymbol.tintColor = .white
             
             cell.expenseName.text = expenses.expenseName
             cell.expenseAmount.text = expenses.expenseAmount
@@ -101,7 +111,6 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         if(collectionView == incomeCollectionView) {
             print(indexPath.row)
         } else {
