@@ -416,14 +416,20 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="TIr-Yu-udL">
-                                                                <rect key="frame" x="67.5" y="0.5" width="20" height="19"/>
-                                                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SmZ-r7-Szw">
+                                                                <rect key="frame" x="67.5" y="0.0" width="20" height="20"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="20" id="12e-UG-Na2"/>
-                                                                    <constraint firstAttribute="width" constant="20" id="9y9-PH-4hc"/>
+                                                                    <constraint firstAttribute="height" constant="20" id="RDc-iP-7Xc"/>
+                                                                    <constraint firstAttribute="width" constant="20" id="eV6-Jd-uua"/>
                                                                 </constraints>
-                                                            </imageView>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="filled" image="plus.circle.fill" catalog="system">
+                                                                    <backgroundConfiguration key="background" cornerRadius="20"/>
+                                                                </buttonConfiguration>
+                                                                <connections>
+                                                                    <segue destination="tiz-7L-ZMK" kind="show" id="TcN-R5-b3s"/>
+                                                                </connections>
+                                                            </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fm8-vD-pey">
                                                                 <rect key="frame" x="92.5" y="0.0" width="281.5" height="20"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -528,14 +534,20 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wJR-5m-tD4">
-                                                                <rect key="frame" x="80" y="0.5" width="20" height="19"/>
-                                                                <color key="tintColor" systemColor="systemRedColor"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8O0-12-ODD">
+                                                                <rect key="frame" x="80" y="0.0" width="20" height="20"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="20" id="K4R-e6-51U"/>
-                                                                    <constraint firstAttribute="height" constant="20" id="SUX-hd-7Wf"/>
+                                                                    <constraint firstAttribute="height" constant="20" id="Myd-jN-FL4"/>
+                                                                    <constraint firstAttribute="width" constant="20" id="RPi-CV-b6I"/>
                                                                 </constraints>
-                                                            </imageView>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="filled" image="plus.circle.fill" catalog="system">
+                                                                    <backgroundConfiguration key="background" cornerRadius="20"/>
+                                                                </buttonConfiguration>
+                                                                <connections>
+                                                                    <segue destination="rDO-Ha-Mqt" kind="show" id="wYW-IW-Adu"/>
+                                                                </connections>
+                                                            </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DVb-QV-r46">
                                                                 <rect key="frame" x="105" y="0.0" width="269" height="20"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -988,13 +1000,17 @@
                             <barButtonItem image="trash.fill" catalog="system" id="V0f-Bt-GSE">
                                 <color key="tintColor" systemColor="systemRedColor"/>
                             </barButtonItem>
-                            <barButtonItem title="Edit" id="BnR-aZ-U2M"/>
+                            <barButtonItem title="Edit" id="BnR-aZ-U2M">
+                                <connections>
+                                    <segue destination="aVn-PN-R49" kind="show" id="5hD-do-shV"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KWK-RX-jbH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2254" y="1959"/>
+            <point key="canvasLocation" x="2254" y="2554"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="daH-9k-OnR">
@@ -1012,9 +1028,9 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wYy-60-kTd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1177" y="1959"/>
+            <point key="canvasLocation" x="1177" y="2554"/>
         </scene>
-        <!--Detail Income-->
+        <!--Detail Expense-->
         <scene sceneID="aHR-lW-YWh">
             <objects>
                 <viewController storyboardIdentifier="expense_detail" hidesBottomBarWhenPushed="YES" id="jSe-77-d6h" customClass="DetailExpenseViewController" customModule="MyDailyTransactionApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -1029,7 +1045,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="qKM-sf-EAl">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="296.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Income Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="soM-6R-NvG">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expense Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="soM-6R-NvG">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="26.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                                 <nil key="textColor"/>
@@ -1144,18 +1160,22 @@
                         <viewLayoutGuide key="safeArea" id="udA-7x-k8f"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Detail Income" id="xXJ-8q-puK">
+                    <navigationItem key="navigationItem" title="Detail Expense" id="xXJ-8q-puK">
                         <rightBarButtonItems>
                             <barButtonItem image="trash.fill" catalog="system" id="GIS-IF-epd">
                                 <color key="tintColor" systemColor="systemRedColor"/>
                             </barButtonItem>
-                            <barButtonItem title="Edit" id="gDw-G5-NXX"/>
+                            <barButtonItem title="Edit" id="gDw-G5-NXX">
+                                <connections>
+                                    <segue destination="LrM-e2-KAP" kind="show" id="QoX-kN-BpV"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F48-fh-g0V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2254" y="2719"/>
+            <point key="canvasLocation" x="2254" y="3314"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ck4-SX-fpz">
@@ -1173,7 +1193,575 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rQd-zh-Vsw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1177" y="2719"/>
+            <point key="canvasLocation" x="1177" y="3314"/>
+        </scene>
+        <!--Add Income-->
+        <scene sceneID="euq-Y2-pMc">
+            <objects>
+                <viewController storyboardIdentifier="add_income" hidesBottomBarWhenPushed="YES" id="tiz-7L-ZMK" customClass="AddIncomeViewController" customModule="MyDailyTransactionApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XPu-pJ-OgV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jY8-dR-pCI">
+                                <rect key="frame" x="20" y="88" width="374" height="669"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LO2-oY-NPg">
+                                        <rect key="frame" x="0.0" y="20" width="374" height="559.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xGM-g5-IeG">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="80.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Income Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpr-3d-Keq">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="23"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Income Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cIf-pV-n2u">
+                                                        <rect key="frame" x="0.0" y="28" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Income Name is Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c83-4t-L0H">
+                                                        <rect key="frame" x="0.0" y="67" width="374" height="13.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="oZb-DN-AnF">
+                                                <rect key="frame" x="0.0" y="100.5" width="374" height="80.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount of Money" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slF-ya-Yzd">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="23"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Amount of Money" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AOr-Or-xIF">
+                                                        <rect key="frame" x="0.0" y="28" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Income Amount is Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBh-pd-UrG">
+                                                        <rect key="frame" x="0.0" y="67" width="374" height="13.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="m6w-sf-xBc">
+                                                <rect key="frame" x="0.0" y="201" width="374" height="80.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4h-ar-RY8">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="23"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Source" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rwA-15-oFy">
+                                                        <rect key="frame" x="0.0" y="28" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Income Source is Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7q-DT-lJb">
+                                                        <rect key="frame" x="0.0" y="67" width="374" height="13.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="m1M-tC-TOJ">
+                                                <rect key="frame" x="0.0" y="301.5" width="374" height="258"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Income Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhe-8I-b6w">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="23"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="267-J2-3gJ">
+                                                        <rect key="frame" x="0.0" y="28" width="374" height="230"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="230" id="FuE-o2-ASf"/>
+                                                        </constraints>
+                                                        <color key="textColor" systemColor="labelColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="LO2-oY-NPg" firstAttribute="width" secondItem="g2h-V0-GR2" secondAttribute="width" id="EN0-eU-xKQ"/>
+                                    <constraint firstItem="LO2-oY-NPg" firstAttribute="trailing" secondItem="aRW-bI-yRa" secondAttribute="trailing" id="GCf-AG-Qev"/>
+                                    <constraint firstItem="LO2-oY-NPg" firstAttribute="bottom" secondItem="aRW-bI-yRa" secondAttribute="bottom" id="TYr-8Z-ZNW"/>
+                                    <constraint firstItem="LO2-oY-NPg" firstAttribute="top" secondItem="aRW-bI-yRa" secondAttribute="top" constant="20" id="aaP-B4-yCB"/>
+                                    <constraint firstItem="LO2-oY-NPg" firstAttribute="leading" secondItem="aRW-bI-yRa" secondAttribute="leading" id="q6Y-Xd-5Li"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="aRW-bI-yRa"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="g2h-V0-GR2"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXW-J1-qX0">
+                                <rect key="frame" x="20" y="782" width="374" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="uqq-VV-bOg"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Add Income"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Tk3-iP-yQW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Tk3-iP-yQW" firstAttribute="trailing" secondItem="jY8-dR-pCI" secondAttribute="trailing" constant="20" id="6lS-JU-29d"/>
+                            <constraint firstItem="jY8-dR-pCI" firstAttribute="leading" secondItem="Tk3-iP-yQW" secondAttribute="leading" constant="20" id="L3h-PV-PTk"/>
+                            <constraint firstItem="hXW-J1-qX0" firstAttribute="top" secondItem="jY8-dR-pCI" secondAttribute="bottom" constant="25" id="aD3-0u-dGQ"/>
+                            <constraint firstItem="hXW-J1-qX0" firstAttribute="top" secondItem="jY8-dR-pCI" secondAttribute="bottom" constant="25" id="dW4-jQ-x3U"/>
+                            <constraint firstItem="hXW-J1-qX0" firstAttribute="leading" secondItem="Tk3-iP-yQW" secondAttribute="leading" constant="20" id="etT-Ux-eT6"/>
+                            <constraint firstItem="jY8-dR-pCI" firstAttribute="top" secondItem="Tk3-iP-yQW" secondAttribute="top" id="kiQ-eP-xrd"/>
+                            <constraint firstItem="Tk3-iP-yQW" firstAttribute="bottom" secondItem="hXW-J1-qX0" secondAttribute="bottom" constant="30" id="l2W-fO-LAA"/>
+                            <constraint firstItem="Tk3-iP-yQW" firstAttribute="trailing" secondItem="hXW-J1-qX0" secondAttribute="trailing" constant="20" id="pbs-Tq-g9Q"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Income" id="XcS-5P-5kX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hg3-O7-T0i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3719" y="1395"/>
+        </scene>
+        <!--Add Expense-->
+        <scene sceneID="JEJ-4i-gA1">
+            <objects>
+                <viewController storyboardIdentifier="add_expense" hidesBottomBarWhenPushed="YES" id="rDO-Ha-Mqt" customClass="AddExpenseViewController" customModule="MyDailyTransactionApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kPr-Ep-icf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g4V-Up-IPA">
+                                <rect key="frame" x="20" y="88" width="374" height="669"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qtI-LM-fh3">
+                                        <rect key="frame" x="0.0" y="20" width="374" height="559.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lES-Ct-26p">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="80.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expense Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="df9-9O-9wE">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="23"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Expense Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tue-bQ-Fqb">
+                                                        <rect key="frame" x="0.0" y="28" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expense Name is Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4y-hN-IOV">
+                                                        <rect key="frame" x="0.0" y="67" width="374" height="13.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="GWn-Ij-y5I">
+                                                <rect key="frame" x="0.0" y="100.5" width="374" height="80.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount of Money" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9U-JL-Je0">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="23"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Amount of Money" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F4T-ND-zqx">
+                                                        <rect key="frame" x="0.0" y="28" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expense Amount is Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yuy-23-203">
+                                                        <rect key="frame" x="0.0" y="67" width="374" height="13.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="mdg-F3-14s">
+                                                <rect key="frame" x="0.0" y="201" width="374" height="80.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Needs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0k1-EW-KZy">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="23"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Needs" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dHW-an-FZ9">
+                                                        <rect key="frame" x="0.0" y="28" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Income Needs is Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1A9-wf-cOs">
+                                                        <rect key="frame" x="0.0" y="67" width="374" height="13.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5of-18-APs">
+                                                <rect key="frame" x="0.0" y="301.5" width="374" height="258"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expense Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvR-Ml-9GQ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="23"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uOW-JC-9uu">
+                                                        <rect key="frame" x="0.0" y="28" width="374" height="230"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="230" id="UvB-c2-Tnr"/>
+                                                        </constraints>
+                                                        <color key="textColor" systemColor="labelColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="qtI-LM-fh3" firstAttribute="bottom" secondItem="EDp-eQ-Fig" secondAttribute="bottom" id="2br-yN-3h9"/>
+                                    <constraint firstItem="qtI-LM-fh3" firstAttribute="width" secondItem="Rtg-a1-Cot" secondAttribute="width" id="9S5-yS-FPN"/>
+                                    <constraint firstItem="qtI-LM-fh3" firstAttribute="leading" secondItem="EDp-eQ-Fig" secondAttribute="leading" id="aWx-RV-btJ"/>
+                                    <constraint firstItem="qtI-LM-fh3" firstAttribute="trailing" secondItem="EDp-eQ-Fig" secondAttribute="trailing" id="hz5-Fa-CS7"/>
+                                    <constraint firstItem="qtI-LM-fh3" firstAttribute="top" secondItem="EDp-eQ-Fig" secondAttribute="top" constant="20" id="lOb-pu-4Iy"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="EDp-eQ-Fig"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Rtg-a1-Cot"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ghn-UG-muf">
+                                <rect key="frame" x="20" y="782" width="374" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="wqx-ad-aJ2"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Add Expense"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ic3-TS-KEm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ghn-UG-muf" firstAttribute="top" secondItem="g4V-Up-IPA" secondAttribute="bottom" constant="25" id="5OV-Mq-vXP"/>
+                            <constraint firstItem="ic3-TS-KEm" firstAttribute="trailing" secondItem="Ghn-UG-muf" secondAttribute="trailing" constant="20" id="N4a-kL-HAL"/>
+                            <constraint firstItem="ic3-TS-KEm" firstAttribute="trailing" secondItem="g4V-Up-IPA" secondAttribute="trailing" constant="20" id="Yl2-wk-EcG"/>
+                            <constraint firstItem="g4V-Up-IPA" firstAttribute="top" secondItem="ic3-TS-KEm" secondAttribute="top" id="ZlN-KT-zUN"/>
+                            <constraint firstItem="Ghn-UG-muf" firstAttribute="top" secondItem="g4V-Up-IPA" secondAttribute="bottom" constant="25" id="f4u-YW-ite"/>
+                            <constraint firstItem="g4V-Up-IPA" firstAttribute="leading" secondItem="ic3-TS-KEm" secondAttribute="leading" constant="20" id="nu4-Pc-KkL"/>
+                            <constraint firstItem="Ghn-UG-muf" firstAttribute="leading" secondItem="ic3-TS-KEm" secondAttribute="leading" constant="20" id="oe9-z8-bYk"/>
+                            <constraint firstItem="ic3-TS-KEm" firstAttribute="bottom" secondItem="Ghn-UG-muf" secondAttribute="bottom" constant="30" id="u44-DE-ALb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Expense" id="Kx4-ha-2wv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BI6-Or-UJ2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2996" y="1942"/>
+        </scene>
+        <!--Edit Income-->
+        <scene sceneID="6lA-02-HJq">
+            <objects>
+                <viewController storyboardIdentifier="edit_income" hidesBottomBarWhenPushed="YES" id="aVn-PN-R49" customClass="EditIncomeViewController" customModule="MyDailyTransactionApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xcp-xf-S4C">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xVA-B8-oX1">
+                                <rect key="frame" x="20" y="88" width="374" height="669"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0LC-3c-Wzr">
+                                        <rect key="frame" x="0.0" y="20" width="374" height="559.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="NDY-ZS-XP9">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="80.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Income Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nbu-IY-w2z">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="23"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Income Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CfJ-Sr-AFJ">
+                                                        <rect key="frame" x="0.0" y="28" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Income Name is Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61F-c4-jsj">
+                                                        <rect key="frame" x="0.0" y="67" width="374" height="13.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="CUm-aa-NeV">
+                                                <rect key="frame" x="0.0" y="100.5" width="374" height="80.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount of Money" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5d5-0z-NQI">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="23"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Amount of Money" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eOl-sf-gNc">
+                                                        <rect key="frame" x="0.0" y="28" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Income Amount is Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CuN-6E-Yam">
+                                                        <rect key="frame" x="0.0" y="67" width="374" height="13.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jHY-kZ-fIu">
+                                                <rect key="frame" x="0.0" y="201" width="374" height="80.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJE-yh-sXn">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="23"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Source" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wns-53-ZND">
+                                                        <rect key="frame" x="0.0" y="28" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Income Source is Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Pn-hG-wvw">
+                                                        <rect key="frame" x="0.0" y="67" width="374" height="13.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fMa-dp-gZv">
+                                                <rect key="frame" x="0.0" y="301.5" width="374" height="258"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Income Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4Y-hT-8r9">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="23"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3ea-Ls-yAp">
+                                                        <rect key="frame" x="0.0" y="28" width="374" height="230"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="230" id="4a4-CW-9gX"/>
+                                                        </constraints>
+                                                        <color key="textColor" systemColor="labelColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="0LC-3c-Wzr" firstAttribute="trailing" secondItem="Lod-1B-twB" secondAttribute="trailing" id="3iX-Ix-cM2"/>
+                                    <constraint firstItem="0LC-3c-Wzr" firstAttribute="bottom" secondItem="Lod-1B-twB" secondAttribute="bottom" id="EGI-NK-YXp"/>
+                                    <constraint firstItem="0LC-3c-Wzr" firstAttribute="leading" secondItem="Lod-1B-twB" secondAttribute="leading" id="c32-lA-TGP"/>
+                                    <constraint firstItem="0LC-3c-Wzr" firstAttribute="width" secondItem="8OU-OP-jCC" secondAttribute="width" id="dXK-lg-i8e"/>
+                                    <constraint firstItem="0LC-3c-Wzr" firstAttribute="top" secondItem="Lod-1B-twB" secondAttribute="top" constant="20" id="uCD-vx-H0L"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Lod-1B-twB"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="8OU-OP-jCC"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1CL-T4-gcS">
+                                <rect key="frame" x="20" y="782" width="374" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="WyC-iq-Rca"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Edit Income"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kV1-16-rF2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1CL-T4-gcS" firstAttribute="top" secondItem="xVA-B8-oX1" secondAttribute="bottom" constant="25" id="0h6-pi-Vyu"/>
+                            <constraint firstItem="1CL-T4-gcS" firstAttribute="leading" secondItem="kV1-16-rF2" secondAttribute="leading" constant="20" id="2q4-Fr-Lhf"/>
+                            <constraint firstItem="xVA-B8-oX1" firstAttribute="leading" secondItem="kV1-16-rF2" secondAttribute="leading" constant="20" id="T3J-nu-7tc"/>
+                            <constraint firstItem="kV1-16-rF2" firstAttribute="trailing" secondItem="1CL-T4-gcS" secondAttribute="trailing" constant="20" id="dyR-rt-H51"/>
+                            <constraint firstItem="1CL-T4-gcS" firstAttribute="top" secondItem="xVA-B8-oX1" secondAttribute="bottom" constant="25" id="fje-b9-4aI"/>
+                            <constraint firstItem="kV1-16-rF2" firstAttribute="trailing" secondItem="xVA-B8-oX1" secondAttribute="trailing" constant="20" id="gbq-tY-FDF"/>
+                            <constraint firstItem="xVA-B8-oX1" firstAttribute="top" secondItem="kV1-16-rF2" secondAttribute="top" id="ho9-IO-5yD"/>
+                            <constraint firstItem="kV1-16-rF2" firstAttribute="bottom" secondItem="1CL-T4-gcS" secondAttribute="bottom" constant="30" id="r9w-MP-K9d"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Edit Income" id="TIH-R7-SVx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KVT-2v-CO1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3781" y="2553"/>
+        </scene>
+        <!--Edit Expense-->
+        <scene sceneID="YG5-re-zTq">
+            <objects>
+                <viewController storyboardIdentifier="edit_expense" hidesBottomBarWhenPushed="YES" id="LrM-e2-KAP" customClass="EditExpenseViewController" customModule="MyDailyTransactionApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6m8-HA-xs5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kPg-q6-x8g">
+                                <rect key="frame" x="20" y="88" width="374" height="669"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LZ5-ui-hUJ">
+                                        <rect key="frame" x="0.0" y="20" width="374" height="559.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="C3Z-eu-Mne">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="80.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expense Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lra-Yk-o3z">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="23"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Expense Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8eg-lg-1zM">
+                                                        <rect key="frame" x="0.0" y="28" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expense Name is Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7LZ-rc-G1e">
+                                                        <rect key="frame" x="0.0" y="67" width="374" height="13.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="EL7-5o-5nL">
+                                                <rect key="frame" x="0.0" y="100.5" width="374" height="80.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount of Money" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KrO-cA-Qdc">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="23"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Amount of Money" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I6Y-Ju-PSc">
+                                                        <rect key="frame" x="0.0" y="28" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expense Amount is Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZU-c3-o7J">
+                                                        <rect key="frame" x="0.0" y="67" width="374" height="13.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="mgu-pN-iYr">
+                                                <rect key="frame" x="0.0" y="201" width="374" height="80.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Needs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4j1-Qm-r0m">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="23"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Needs" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LDN-aB-DZ7">
+                                                        <rect key="frame" x="0.0" y="28" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Income Needs is Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9un-Ah-Vtx">
+                                                        <rect key="frame" x="0.0" y="67" width="374" height="13.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="C9m-Gj-iPe">
+                                                <rect key="frame" x="0.0" y="301.5" width="374" height="258"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expense Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2AS-cc-G4z">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="23"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="suZ-B2-UBo">
+                                                        <rect key="frame" x="0.0" y="28" width="374" height="230"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="230" id="qFv-BO-D42"/>
+                                                        </constraints>
+                                                        <color key="textColor" systemColor="labelColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="LZ5-ui-hUJ" firstAttribute="leading" secondItem="fdk-Mw-OOq" secondAttribute="leading" id="DL4-o7-jmz"/>
+                                    <constraint firstItem="LZ5-ui-hUJ" firstAttribute="top" secondItem="fdk-Mw-OOq" secondAttribute="top" constant="20" id="N1d-5X-eiJ"/>
+                                    <constraint firstItem="LZ5-ui-hUJ" firstAttribute="trailing" secondItem="fdk-Mw-OOq" secondAttribute="trailing" id="SJe-V8-Irg"/>
+                                    <constraint firstItem="LZ5-ui-hUJ" firstAttribute="width" secondItem="g9d-Mt-acd" secondAttribute="width" id="Ufa-n4-ShT"/>
+                                    <constraint firstItem="LZ5-ui-hUJ" firstAttribute="bottom" secondItem="fdk-Mw-OOq" secondAttribute="bottom" id="sJV-be-JPJ"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="fdk-Mw-OOq"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="g9d-Mt-acd"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVs-8C-y9m">
+                                <rect key="frame" x="20" y="782" width="374" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="gkZ-7k-FvB"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Edit Expense"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="G8Q-at-TVa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="G8Q-at-TVa" firstAttribute="trailing" secondItem="kPg-q6-x8g" secondAttribute="trailing" constant="20" id="A7V-Fb-ME3"/>
+                            <constraint firstItem="G8Q-at-TVa" firstAttribute="trailing" secondItem="BVs-8C-y9m" secondAttribute="trailing" constant="20" id="EjM-vg-cXW"/>
+                            <constraint firstItem="kPg-q6-x8g" firstAttribute="top" secondItem="G8Q-at-TVa" secondAttribute="top" id="N12-SY-cPj"/>
+                            <constraint firstItem="G8Q-at-TVa" firstAttribute="bottom" secondItem="BVs-8C-y9m" secondAttribute="bottom" constant="30" id="W77-Pf-Dxr"/>
+                            <constraint firstItem="BVs-8C-y9m" firstAttribute="top" secondItem="kPg-q6-x8g" secondAttribute="bottom" constant="25" id="loz-ge-ppp"/>
+                            <constraint firstItem="BVs-8C-y9m" firstAttribute="top" secondItem="kPg-q6-x8g" secondAttribute="bottom" constant="25" id="rX1-Ug-YyR"/>
+                            <constraint firstItem="BVs-8C-y9m" firstAttribute="leading" secondItem="G8Q-at-TVa" secondAttribute="leading" constant="20" id="sfF-5g-7LN"/>
+                            <constraint firstItem="kPg-q6-x8g" firstAttribute="leading" secondItem="G8Q-at-TVa" secondAttribute="leading" constant="20" id="z2d-Do-Nx1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Edit Expense" id="Use-fW-r5o"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pV8-VS-emT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3780" y="3313"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -1197,9 +1785,6 @@
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

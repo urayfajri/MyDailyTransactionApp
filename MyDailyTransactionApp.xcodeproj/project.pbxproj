@@ -18,6 +18,10 @@
 		2001586A2817B49500D02A35 /* MyDailyTransactionAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200158692817B49500D02A35 /* MyDailyTransactionAppUITests.swift */; };
 		2001586C2817B49500D02A35 /* MyDailyTransactionAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2001586B2817B49500D02A35 /* MyDailyTransactionAppUITestsLaunchTests.swift */; };
 		2001587E2819272100D02A35 /* CustomElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2001587D2819272100D02A35 /* CustomElements.swift */; };
+		20697C6F281AFB420093F0D9 /* AddIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20697C6E281AFB420093F0D9 /* AddIncomeViewController.swift */; };
+		20697C71281AFB4F0093F0D9 /* AddExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20697C70281AFB4F0093F0D9 /* AddExpenseViewController.swift */; };
+		20697C73281B01A40093F0D9 /* EditIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20697C72281B01A40093F0D9 /* EditIncomeViewController.swift */; };
+		20697C75281B01B50093F0D9 /* EditExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20697C74281B01B50093F0D9 /* EditExpenseViewController.swift */; };
 		207366F2281A420C00E0E2F6 /* Income+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207366EC281A420C00E0E2F6 /* Income+CoreDataClass.swift */; };
 		207366F3281A420C00E0E2F6 /* Income+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207366ED281A420C00E0E2F6 /* Income+CoreDataProperties.swift */; };
 		207366F4281A420C00E0E2F6 /* Expense+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207366EE281A420C00E0E2F6 /* Expense+CoreDataClass.swift */; };
@@ -68,6 +72,10 @@
 		200158692817B49500D02A35 /* MyDailyTransactionAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDailyTransactionAppUITests.swift; sourceTree = "<group>"; };
 		2001586B2817B49500D02A35 /* MyDailyTransactionAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDailyTransactionAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2001587D2819272100D02A35 /* CustomElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomElements.swift; sourceTree = "<group>"; };
+		20697C6E281AFB420093F0D9 /* AddIncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIncomeViewController.swift; sourceTree = "<group>"; };
+		20697C70281AFB4F0093F0D9 /* AddExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseViewController.swift; sourceTree = "<group>"; };
+		20697C72281B01A40093F0D9 /* EditIncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditIncomeViewController.swift; sourceTree = "<group>"; };
+		20697C74281B01B50093F0D9 /* EditExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExpenseViewController.swift; sourceTree = "<group>"; };
 		207366EC281A420C00E0E2F6 /* Income+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Income+CoreDataClass.swift"; sourceTree = "<group>"; };
 		207366ED281A420C00E0E2F6 /* Income+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Income+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		207366EE281A420C00E0E2F6 /* Expense+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -175,6 +183,10 @@
 				2073670E281ADDD400E0E2F6 /* EditTransactionViewController.swift */,
 				20736710281AF81800E0E2F6 /* DetailIncomeViewController.swift */,
 				20736712281AF83300E0E2F6 /* DetailExpenseViewController.swift */,
+				20697C6E281AFB420093F0D9 /* AddIncomeViewController.swift */,
+				20697C70281AFB4F0093F0D9 /* AddExpenseViewController.swift */,
+				20697C72281B01A40093F0D9 /* EditIncomeViewController.swift */,
+				20697C74281B01B50093F0D9 /* EditExpenseViewController.swift */,
 			);
 			path = viewController;
 			sourceTree = "<group>";
@@ -347,13 +359,16 @@
 				207366F4281A420C00E0E2F6 /* Expense+CoreDataClass.swift in Sources */,
 				2001587E2819272100D02A35 /* CustomElements.swift in Sources */,
 				207366F6281A420C00E0E2F6 /* Transaction+CoreDataClass.swift in Sources */,
+				20697C73281B01A40093F0D9 /* EditIncomeViewController.swift in Sources */,
 				200158462817B49500D02A35 /* AppDelegate.swift in Sources */,
 				20736709281AC0B700E0E2F6 /* IncomeCell.swift in Sources */,
 				207366F2281A420C00E0E2F6 /* Income+CoreDataClass.swift in Sources */,
 				200158502817B49500D02A35 /* MyDailyTransactionApp.xcdatamodeld in Sources */,
 				20736713281AF83300E0E2F6 /* DetailExpenseViewController.swift in Sources */,
 				20736705281A475A00E0E2F6 /* transactionCell.swift in Sources */,
+				20697C6F281AFB420093F0D9 /* AddIncomeViewController.swift in Sources */,
 				20736707281A6FAF00E0E2F6 /* DetailTransactionViewController.swift in Sources */,
+				20697C75281B01B50093F0D9 /* EditExpenseViewController.swift in Sources */,
 				207366F5281A420C00E0E2F6 /* Expense+CoreDataProperties.swift in Sources */,
 				207366F3281A420C00E0E2F6 /* Income+CoreDataProperties.swift in Sources */,
 				2092285B28192C830074CCD9 /* AddTransactionViewController.swift in Sources */,
@@ -361,6 +376,7 @@
 				200158482817B49500D02A35 /* SceneDelegate.swift in Sources */,
 				207366F7281A420C00E0E2F6 /* Transaction+CoreDataProperties.swift in Sources */,
 				20736711281AF81800E0E2F6 /* DetailIncomeViewController.swift in Sources */,
+				20697C71281AFB4F0093F0D9 /* AddExpenseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
