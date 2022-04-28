@@ -36,7 +36,7 @@
                                 <rect key="frame" x="20" y="241" width="374" height="572"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="transaction_cell" id="eP5-Hv-lt8">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="transaction_cell" id="eP5-Hv-lt8" customClass="transactionCell" customModule="MyDailyTransactionApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="374" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eP5-Hv-lt8" id="uRw-xc-ZIo">
@@ -83,6 +83,12 @@
                                                 <constraint firstItem="uDN-dY-0mb" firstAttribute="top" secondItem="wuP-h6-dU8" secondAttribute="bottom" constant="2" id="yWZ-Zv-586"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="transactionBudget" destination="K0p-Hg-flp" id="1CP-Dn-gcy"/>
+                                            <outlet property="transactionDate" destination="uDN-dY-0mb" id="0BY-Gl-1au"/>
+                                            <outlet property="transactionName" destination="wuP-h6-dU8" id="EJc-8S-fMd"/>
+                                            <outlet property="transactionView" destination="uRw-xc-ZIo" id="uzo-2l-DYm"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
