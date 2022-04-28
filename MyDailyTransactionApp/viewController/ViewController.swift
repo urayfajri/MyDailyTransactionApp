@@ -12,7 +12,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
        
     @IBOutlet weak var transactionTableView: UITableView!
     @IBOutlet weak var searchTransaction: UISearchBar!
-    
+    @IBOutlet weak var hintLabel: UILabel!
     var emptyList: UITextView!
     
     private var transactions = [Transaction]()
@@ -28,14 +28,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         emptyList = UITextView()
         dummyData()
         getAllTransactions()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getAllTransactions()
         
-        if(transactions.isEmpty)
-        {
-            emptyList.text = "You haven’t create any transaction\nStart create one now!"
-            emptyList.textColor = .gray
-            emptyList.textAlignment = .center
-            emptyList.frame = CGRect(x: 0, y: view.frame.size.height / 2, width: view.frame.size.width, height: 100)
-            view.addSubview(emptyList)
+        if(!transactions.isEmpty) {
+            emptyList.isHidden = true
+            hintLabel.isHidden = false
         }
     }
     
@@ -60,11 +60,35 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
-//        let vc = self.storyboard?.instantiateViewController(withIdentifier: "transaction_detail") as! transactionDetailViewController
-//        vc.transaction = transactions[indexPath.row]
-//
-//        self.navigationController?.pushViewController(vc, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "transaction_detail") as! DetailTransactionViewController
+        vc.transaction = transactions[indexPath.row]
+
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let transactionData = transactions[indexPath.row]
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { _ , indexPath in
+            let alertControl = UIAlertController(title: "Delete Transaction", message: "Are you sure want to delete this transaction?", preferredStyle: .alert)
+            alertControl.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: {_ in
+                self.transactions.remove(at: indexPath.row)
+                self.deleteItem(item: transactionData)
+            }))
+            
+            alertControl.addAction(UIAlertAction(title: "No", style: .cancel, handler: {_ in
+                alertControl.dismiss(animated: true, completion: nil)
+            }))
+            
+            self.present(alertControl, animated: true)
+        }
+        
+        return [deleteAction]
     }
 
     func getAllTransactions(){
@@ -74,11 +98,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         do
         {
             transactions = try context.fetch(fetchRequest)
-            
-            
+                        
             DispatchQueue.main.async
             {
                 self.transactionTableView.reloadData()
+            }
+            
+            if(transactions.isEmpty)
+            {
+                hintLabel.isHidden = true
+                emptyList.isHidden = false
+                emptyList.text = "You haven’t create any transaction\nStart create one now!"
+                emptyList.textColor = .gray
+                emptyList.textAlignment = .center
+                emptyList.frame = CGRect(x: 0, y: view.frame.size.height / 2, width: view.frame.size.width, height: 100)
+                view.addSubview(emptyList)
             }
         }
         catch
@@ -138,6 +172,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         transaction1.addToIncomes(income2)
         transaction1.addToExpenses(expense1)
 
+        do
+        {
+            try context.save()
+        }
+        catch
+        {
+
+        }
 
     }
     
@@ -181,5 +223,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         searchTransaction.showsCancelButton = false
     }
 
+    
+    func deleteItem(item: Transaction)
+    {
+        context.delete(item)
+        
+        do
+        {
+            try context.save()
+            getAllTransactions()
+        }
+        catch
+        {
+
+        }
+    }
+    
 }
 

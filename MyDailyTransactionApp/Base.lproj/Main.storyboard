@@ -125,6 +125,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="hintLabel" destination="4DD-aa-vjN" id="IAV-mn-f2c"/>
                         <outlet property="searchTransaction" destination="uYk-Oh-yPe" id="Ri0-2Y-OlS"/>
                         <outlet property="transactionTableView" destination="cxt-FL-cOr" id="XL2-az-fHa"/>
                     </connections>
@@ -265,7 +266,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DKo-5c-uSV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3579.7101449275365" y="-104.46428571428571"/>
+            <point key="canvasLocation" x="3719" y="-114"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="D7J-St-4ay">
@@ -316,6 +317,22 @@
             </objects>
             <point key="canvasLocation" x="2254" y="422"/>
         </scene>
+        <!--Detail Transaction-->
+        <scene sceneID="fqA-ug-Vxq">
+            <objects>
+                <viewController storyboardIdentifier="transaction_detail" hidesBottomBarWhenPushed="YES" id="EJu-UD-WlK" customClass="DetailTransactionViewController" customModule="MyDailyTransactionApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MKC-kd-Jcf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="7Ki-Ti-WqB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detail Transaction" id="cV0-5P-4Ui"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sqw-0r-2to" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3163.7681159420295" y="1217.4107142857142"/>
+        </scene>
         <!--All Transactions-->
         <scene sceneID="5b1-F8-OUN">
             <objects>
@@ -353,6 +370,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lA1-aP-Lfr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1156.521739130435" y="421.875"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4ht-Yg-HiX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kR1-W7-idx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6fc-Vr-uNd">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EJu-UD-WlK" kind="relationship" relationship="rootViewController" id="S0u-5G-3GZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DAo-Gb-k8B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2253.6231884057975" y="1217.4107142857142"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
