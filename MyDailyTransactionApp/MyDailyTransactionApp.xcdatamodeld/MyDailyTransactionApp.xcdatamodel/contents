@@ -1,4 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E258" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Expense" representedClassName="Expense" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="expenseAmount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="expenseDescription" optional="YES" attributeType="String"/>
+        <attribute name="expenseName" optional="YES" attributeType="String"/>
+        <attribute name="expenseNeeds" optional="YES" attributeType="String"/>
+        <relationship name="expenseTransaction" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Transaction" inverseName="expenses" inverseEntity="Transaction"/>
+    </entity>
+    <entity name="Income" representedClassName="Income" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="incomeAmount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="incomeDescription" optional="YES" attributeType="String"/>
+        <attribute name="incomeName" optional="YES" attributeType="String"/>
+        <attribute name="incomeSource" optional="YES" attributeType="String"/>
+        <relationship name="incomeTransaction" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Transaction" inverseName="incomes" inverseEntity="Transaction"/>
+    </entity>
+    <entity name="Transaction" representedClassName="Transaction" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="transactionDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="transactionDescription" optional="YES" attributeType="String"/>
+        <attribute name="transactionName" optional="YES" attributeType="String"/>
+        <relationship name="expenses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Expense" inverseName="expenseTransaction" inverseEntity="Expense"/>
+        <relationship name="incomes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Income" inverseName="incomeTransaction" inverseEntity="Income"/>
+    </entity>
+    <elements>
+        <element name="Income" positionX="-36" positionY="9" width="128" height="119"/>
+        <element name="Expense" positionX="0" positionY="81" width="128" height="119"/>
+        <element name="Transaction" positionX="27" positionY="126" width="128" height="119"/>
+    </elements>
 </model>
