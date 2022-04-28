@@ -1,39 +1,41 @@
 //
-//  AddTransactionViewController.swift
+//  EditTransactionViewController.swift
 //  MyDailyTransactionApp
 //
-//  Created by Uray Muhamad Noor Fajri Widiansyah on 27/04/22.
+//  Created by Uray Muhamad Noor Fajri Widiansyah on 28/04/22.
 //
 
 import UIKit
 
-class AddTransactionViewController: UIViewController {
+class EditTransactionViewController: UIViewController {
 
-    
     @IBOutlet weak var transactionNameTextField: UITextField!
     @IBOutlet weak var transactionDateTextField: UITextField!
     @IBOutlet weak var transactionDescriptionTextView: UITextView!
+    
     @IBOutlet weak var validateTransactionName: UILabel!
     @IBOutlet weak var validateTransactionDate: UILabel!
     
-    @IBOutlet weak var addTransactionButton: UIButton!
+    
+    @IBOutlet weak var editTransactionButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         resetForm()
         setUpElements()
-    }
 
+    }
+    
     func setUpElements() {
         
         CustomElements.styleTextField(transactionNameTextField)
         CustomElements.styleTextView(transactionDescriptionTextView)
-        CustomElements.styleFilledButtonAdd(addTransactionButton)
+        CustomElements.styleFilledButtonEdit(editTransactionButton)
     }
     
     func resetForm() {
-        addTransactionButton.isEnabled = false
+        editTransactionButton.isEnabled = false
         
         validateTransactionName.isHidden = false
         validateTransactionDate.isHidden = true
@@ -49,7 +51,6 @@ class AddTransactionViewController: UIViewController {
 
     }
 
-    
     @IBAction func transactionNameChanged(_ sender: Any) {
         if let transactionName = transactionNameTextField.text
         {
@@ -77,16 +78,17 @@ class AddTransactionViewController: UIViewController {
     func checkValidForm() {
         if(validateTransactionName.isHidden &&  validateTransactionDate.isHidden)
         {
-            addTransactionButton.isEnabled = true
+            editTransactionButton.isEnabled = true
         }
         else
         {
-            addTransactionButton.isEnabled = false
+            editTransactionButton.isEnabled = false
         }
     }
     
-    @IBAction func AddTransactionTapped(_ sender: Any) {
-        let alertControl = UIAlertController(title: "Add Transaction", message: "Are you sure want to add this transaction", preferredStyle: .alert)
+    @IBAction func editTransactionTapped(_ sender: Any) {
+        
+        let alertControl = UIAlertController(title: "Edit Transaction", message: "Are you sure want to edit this transaction", preferredStyle: .alert)
         alertControl.addAction(UIAlertAction(title: "No", style: .cancel, handler: {_ in
             alertControl.dismiss(animated: true, completion: nil)
         }))
@@ -101,4 +103,5 @@ class AddTransactionViewController: UIViewController {
         
         self.present(alertControl, animated: true)
     }
+    
 }

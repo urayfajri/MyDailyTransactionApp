@@ -28,6 +28,7 @@
 		20736707281A6FAF00E0E2F6 /* DetailTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20736706281A6FAF00E0E2F6 /* DetailTransactionViewController.swift */; };
 		20736709281AC0B700E0E2F6 /* IncomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20736708281AC0B700E0E2F6 /* IncomeCell.swift */; };
 		2073670B281AD42B00E0E2F6 /* ExpenseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2073670A281AD42B00E0E2F6 /* ExpenseCell.swift */; };
+		2073670F281ADDD400E0E2F6 /* EditTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2073670E281ADDD400E0E2F6 /* EditTransactionViewController.swift */; };
 		20922859281929BE0074CCD9 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20922858281929BE0074CCD9 /* CalenderViewController.swift */; };
 		2092285B28192C830074CCD9 /* AddTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2092285A28192C830074CCD9 /* AddTransactionViewController.swift */; };
 /* End PBXBuildFile section */
@@ -75,6 +76,7 @@
 		20736706281A6FAF00E0E2F6 /* DetailTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTransactionViewController.swift; sourceTree = "<group>"; };
 		20736708281AC0B700E0E2F6 /* IncomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeCell.swift; sourceTree = "<group>"; };
 		2073670A281AD42B00E0E2F6 /* ExpenseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCell.swift; sourceTree = "<group>"; };
+		2073670E281ADDD400E0E2F6 /* EditTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTransactionViewController.swift; sourceTree = "<group>"; };
 		20922858281929BE0074CCD9 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
 		2092285A28192C830074CCD9 /* AddTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,6 +168,7 @@
 				20922858281929BE0074CCD9 /* CalenderViewController.swift */,
 				2092285A28192C830074CCD9 /* AddTransactionViewController.swift */,
 				20736706281A6FAF00E0E2F6 /* DetailTransactionViewController.swift */,
+				2073670E281ADDD400E0E2F6 /* EditTransactionViewController.swift */,
 			);
 			path = viewController;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				207366F5281A420C00E0E2F6 /* Expense+CoreDataProperties.swift in Sources */,
 				207366F3281A420C00E0E2F6 /* Income+CoreDataProperties.swift in Sources */,
 				2092285B28192C830074CCD9 /* AddTransactionViewController.swift in Sources */,
+				2073670F281ADDD400E0E2F6 /* EditTransactionViewController.swift in Sources */,
 				200158482817B49500D02A35 /* SceneDelegate.swift in Sources */,
 				207366F7281A420C00E0E2F6 /* Transaction+CoreDataProperties.swift in Sources */,
 			);

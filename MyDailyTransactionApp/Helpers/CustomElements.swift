@@ -38,4 +38,10 @@ class CustomElements {
         button.tintColor = UIColor.systemGreen
     }
     
+    static func styleFilledButtonEdit(_ button:UIButton) {
+        // Filled rounded corner style
+        button.layer.cornerRadius = 25.0
+        button.tintColor = UIColor.systemYellow
+    }
+    
 }
