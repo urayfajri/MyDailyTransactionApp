@@ -112,9 +112,49 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if(collectionView == incomeCollectionView) {
-            print(indexPath.row)
+            let item = dummyIncome[indexPath.row]
+            let sheet = UIAlertController(title: "Action for Income", message: nil, preferredStyle: .actionSheet)
+            sheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            sheet.addAction(UIAlertAction(title: "See Detail", style: .default, handler: {_ in
+                
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "income_detail") as! DetailIncomeViewController
+                self.navigationController?.pushViewController(vc, animated: true)
+                
+            }))
+            sheet.addAction(UIAlertAction(title: "Edit", style: .default, handler: {_ in
+                
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "edit_income") as! EditIncomeViewController
+                // vc.income = item
+                self.navigationController?.pushViewController(vc, animated: true)
+                
+            }))
+            
+            sheet.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: {[weak self]_ in
+            }))
+            
+            present(sheet, animated: true)
         } else {
-            print(indexPath.row)
+            let item = dummyIncome[indexPath.row]
+            let sheet = UIAlertController(title: "Action for Expense", message: nil, preferredStyle: .actionSheet)
+            sheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            sheet.addAction(UIAlertAction(title: "See Detail", style: .default, handler: {_ in
+                
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "expense_detail") as! DetailExpenseViewController
+                self.navigationController?.pushViewController(vc, animated: true)
+                
+            }))
+            sheet.addAction(UIAlertAction(title: "Edit", style: .default, handler: {_ in
+                
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "edit_expense") as! EditExpenseViewController
+                // vc.income = item
+                self.navigationController?.pushViewController(vc, animated: true)
+                
+            }))
+            
+            sheet.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: {[weak self]_ in
+            }))
+            
+            present(sheet, animated: true)
         }
     }
 

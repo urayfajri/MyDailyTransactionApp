@@ -8,6 +8,8 @@
 import UIKit
 
 class EditIncomeViewController: UIViewController {
+    
+    var income: Income?
 
     override func viewDidLoad() {
         super.viewDidLoad()
