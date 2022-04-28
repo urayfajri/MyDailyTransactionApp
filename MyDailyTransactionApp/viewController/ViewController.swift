@@ -8,9 +8,11 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
        
     @IBOutlet weak var transactionTableView: UITableView!
+    @IBOutlet weak var searchTransaction: UISearchBar!
+    
     var emptyList: UITextView!
     
     private var transactions = [Transaction]()
@@ -137,6 +139,46 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         transaction1.addToExpenses(expense1)
 
 
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchTransaction.showsCancelButton = true
+        if searchText == ""
+        {
+            getAllTransactions()
+        }
+        
+        else
+        {
+            transactions = []
+            
+            do
+            {
+                let filteredRequest: NSFetchRequest<Transaction> = Transaction.fetchRequest()
+                let pred = NSPredicate(format: "transactionName CONTAINS '\(searchText)'")
+                
+                filteredRequest.predicate = pred
+                
+                self.transactions = try context.fetch(filteredRequest)
+                
+                DispatchQueue.main.async {
+                    self.transactionTableView.reloadData()
+                }
+            }
+            
+            catch
+            {
+                
+            }
+        }
+        
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchTransaction.text = ""
+        searchTransaction.endEditing(true)
+        getAllTransactions()
+        searchTransaction.showsCancelButton = false
     }
 
 }

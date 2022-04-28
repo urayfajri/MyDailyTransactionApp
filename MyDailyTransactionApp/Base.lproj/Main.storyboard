@@ -25,6 +25,9 @@
                             <searchBar contentMode="redraw" placeholder="search transaction" translatesAutoresizingMaskIntoConstraints="NO" id="uYk-Oh-yPe">
                                 <rect key="frame" x="0.0" y="144" width="414" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="cff-3U-kUY"/>
+                                </connections>
                             </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click transaction too see transaction detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4DD-aa-vjN">
                                 <rect key="frame" x="20" y="200" width="374" height="16"/>
@@ -122,6 +125,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchTransaction" destination="uYk-Oh-yPe" id="Ri0-2Y-OlS"/>
                         <outlet property="transactionTableView" destination="cxt-FL-cOr" id="XL2-az-fHa"/>
                     </connections>
                 </viewController>
