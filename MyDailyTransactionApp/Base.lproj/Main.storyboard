@@ -323,7 +323,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="PtD-FM-Oqj">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="546.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="578.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transaction Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XES-TY-DiR">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="26.5"/>
@@ -393,8 +393,8 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Kzl-iH-wpQ">
-                                                <rect key="frame" x="0.0" y="216.5" width="374" height="150"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Kzl-iH-wpQ">
+                                                <rect key="frame" x="0.0" y="216.5" width="374" height="166"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xNh-bp-IIa">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="20"/>
@@ -431,8 +431,11 @@
                                                         </subviews>
                                                     </stackView>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uqS-ID-4kp">
-                                                        <rect key="frame" x="0.0" y="30" width="374" height="120"/>
+                                                        <rect key="frame" x="0.0" y="25" width="374" height="120"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="120" id="i3Z-2N-1fl"/>
+                                                        </constraints>
                                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3vN-5h-PjJ">
                                                             <size key="itemSize" width="177" height="117"/>
                                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -506,13 +509,16 @@
                                                             </collectionViewCell>
                                                         </cells>
                                                     </collectionView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don't any incomes yet" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wz1-Na-gtu">
+                                                        <rect key="frame" x="0.0" y="150" width="374" height="16"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="NkY-wF-QUd"/>
-                                                </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="OK7-qw-9oX">
-                                                <rect key="frame" x="0.0" y="396.5" width="374" height="150"/>
+                                                <rect key="frame" x="0.0" y="412.5" width="374" height="166"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Yth-Va-XBX">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="20"/>
@@ -549,8 +555,11 @@
                                                         </subviews>
                                                     </stackView>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FUU-OP-0mz">
-                                                        <rect key="frame" x="0.0" y="25" width="374" height="125"/>
+                                                        <rect key="frame" x="0.0" y="25" width="374" height="120"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="120" id="OQy-0M-FGz"/>
+                                                        </constraints>
                                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dak-ei-6Kj">
                                                             <size key="itemSize" width="177" height="117"/>
                                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -624,10 +633,13 @@
                                                             </collectionViewCell>
                                                         </cells>
                                                     </collectionView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don't any expenses yet" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yMk-Io-GGl">
+                                                        <rect key="frame" x="0.0" y="150" width="374" height="16"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="ea0-1A-edf"/>
-                                                </constraints>
                                             </stackView>
                                         </subviews>
                                     </stackView>
@@ -664,6 +676,8 @@
                     <connections>
                         <outlet property="addExpenseButton" destination="8O0-12-ODD" id="xpV-3F-llb"/>
                         <outlet property="addIncomeButton" destination="SmZ-r7-Szw" id="9RW-D9-fHb"/>
+                        <outlet property="emptyExpenseLabel" destination="yMk-Io-GGl" id="NZx-oB-7fD"/>
+                        <outlet property="emptyIncomeLabel" destination="Wz1-Na-gtu" id="zVf-A5-1fG"/>
                         <outlet property="expenseCollectionView" destination="FUU-OP-0mz" id="cPd-6U-N47"/>
                         <outlet property="incomeCollectionView" destination="uqS-ID-4kp" id="OWM-ms-b6m"/>
                         <outlet property="transactionDateLabel" destination="cHn-UM-CIV" id="Mkb-Vr-VFS"/>

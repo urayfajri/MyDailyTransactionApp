@@ -14,6 +14,8 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
     @IBOutlet weak var transactionDateLabel: UILabel!
     @IBOutlet weak var transactionNoteTextView: UITextView!
     
+    @IBOutlet weak var emptyIncomeLabel: UILabel!
+    @IBOutlet weak var emptyExpenseLabel: UILabel!
     
     @IBOutlet weak var addIncomeButton: UIButton!
     @IBOutlet weak var addExpenseButton: UIButton!
@@ -87,6 +89,9 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
         
         if(incomes.isEmpty) {
             incomeCollectionView.isHidden = true
+            emptyIncomeLabel.isHidden = false
+        } else {
+            emptyIncomeLabel.isHidden = true
         }
     }
     
@@ -98,6 +103,9 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
         
         if(expenses.isEmpty) {
             expenseCollectionView.isHidden = true
+            emptyExpenseLabel.isHidden = false
+        } else {
+            emptyExpenseLabel.isHidden = true
         }
     }
     
@@ -109,7 +117,7 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
         
         let lay = collectionViewLayout as! UICollectionViewFlowLayout
         let widthPerItem = collectionView.frame.width / 2 - lay.minimumInteritemSpacing
-        return CGSize(width: widthPerItem, height: 117)
+        return CGSize(width: widthPerItem, height: 120)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
