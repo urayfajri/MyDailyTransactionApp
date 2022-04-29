@@ -33,8 +33,6 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
         initTransaction()
         fetchIncome()
         fetchExpense()
-        print(incomes.count)
-        print(expenses.count)
         
         // Do any additional setup after loading the view.
         incomeCollectionView.delegate = self
@@ -55,6 +53,12 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
         expenseLayout.minimumLineSpacing = 10
         expenseLayout.minimumInteritemSpacing = 10
         expenseCollectionView.setCollectionViewLayout(expenseLayout, animated: true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        initTransaction()
+        fetchIncome()
+        fetchExpense()
     }
     
     func initTransaction() {
@@ -178,29 +182,32 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if(collectionView == incomeCollectionView) {
-            let item = incomes[indexPath.row]
+            let income = incomes[indexPath.row]
             let sheet = UIAlertController(title: "Action for Income", message: nil, preferredStyle: .actionSheet)
             sheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             sheet.addAction(UIAlertAction(title: "See Detail", style: .default, handler: {_ in
                 
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "income_detail") as! DetailIncomeViewController
+                vc.income = income
                 self.navigationController?.pushViewController(vc, animated: true)
                 
             }))
             sheet.addAction(UIAlertAction(title: "Edit", style: .default, handler: {_ in
                 
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "edit_income") as! EditIncomeViewController
-                // vc.income = item
+                vc.income = income
                 self.navigationController?.pushViewController(vc, animated: true)
                 
             }))
             
             sheet.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: {[weak self]_ in
+                self?.deleteIncome(income: income)
+                collectionView.reloadData()
             }))
             
             present(sheet, animated: true)
         } else {
-            let item = expenses[indexPath.row]
+            let expense = expenses[indexPath.row]
             let sheet = UIAlertController(title: "Action for Expense", message: nil, preferredStyle: .actionSheet)
             sheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             sheet.addAction(UIAlertAction(title: "See Detail", style: .default, handler: {_ in
@@ -212,16 +219,78 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
             sheet.addAction(UIAlertAction(title: "Edit", style: .default, handler: {_ in
                 
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "edit_expense") as! EditExpenseViewController
-                // vc.income = item
+                // vc.expense = expense
                 self.navigationController?.pushViewController(vc, animated: true)
                 
             }))
             
             sheet.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: {[weak self]_ in
+                self?.deleteExpense(expense: expense)
+                collectionView.reloadData()
             }))
             
             present(sheet, animated: true)
         }
     }
 
+    @IBAction func trashButtonTapped(_ sender: Any) {
+        let alertControl = UIAlertController(title: "Delete", message: "Are you sure want to delete this transaction?", preferredStyle: .alert)
+        alertControl.addAction(UIAlertAction(title: "No", style: .cancel, handler: {_ in
+            alertControl.dismiss(animated: true, completion: nil)
+        }))
+        alertControl.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { [self]_ in
+            self.deleteItem(item: transaction!)
+            self.navigationController?.popViewController(animated: true)
+        }))
+        
+        self.present(alertControl, animated: true)
+    }
+    
+    func deleteItem(item: Transaction)
+    {
+        context.delete(item)
+        
+        do
+        {
+            try context.save()
+        }
+        catch
+        {
+
+        }
+    }
+    
+    func deleteIncome(income: Income)
+    {
+        context.delete(income)
+        
+        do
+        {
+            try context.save()
+            fetchIncome()
+            fetchExpense()
+        }
+
+        catch
+        {
+
+        }
+    }
+    
+    func deleteExpense(expense: Expense)
+    {
+        context.delete(expense)
+        
+        do
+        {
+            try context.save()
+            fetchIncome()
+            fetchExpense()
+        }
+
+        catch
+        {
+
+        }
+    }
 }

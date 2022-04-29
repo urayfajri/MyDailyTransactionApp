@@ -658,6 +658,9 @@
                         <rightBarButtonItems>
                             <barButtonItem image="trash.fill" catalog="system" id="9R7-no-Haj">
                                 <color key="tintColor" systemColor="systemRedColor"/>
+                                <connections>
+                                    <action selector="trashButtonTapped:" destination="EJu-UD-WlK" id="wBH-3Z-Oxr"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem title="Edit" id="wlY-EN-WoN">
                                 <connections>
@@ -1004,6 +1007,9 @@
                         <rightBarButtonItems>
                             <barButtonItem image="trash.fill" catalog="system" id="V0f-Bt-GSE">
                                 <color key="tintColor" systemColor="systemRedColor"/>
+                                <connections>
+                                    <action selector="trashButtonTapped:" destination="EHN-hc-RTI" id="X2O-4R-0g8"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem title="Edit" id="BnR-aZ-U2M">
                                 <connections>
@@ -1012,6 +1018,12 @@
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="incomeAmountLabel" destination="Xrw-3e-MDR" id="wvI-Lf-DOS"/>
+                        <outlet property="incomeDescriptionTextView" destination="Ocy-5w-Dxx" id="xWn-e3-6ek"/>
+                        <outlet property="incomeNameLabel" destination="i7M-bq-Cpc" id="WkB-tu-NAw"/>
+                        <outlet property="incomeSourceLabel" destination="Oc0-uX-rIF" id="T5v-6G-7bf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KWK-RX-jbH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
