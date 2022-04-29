@@ -63,7 +63,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.deselectRow(at: indexPath, animated: true)
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "transaction_detail") as! DetailTransactionViewController
         vc.transaction = transactions[indexPath.row]
-
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -95,6 +94,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // fetch the data from core data in the table view
         let fetchRequest: NSFetchRequest<Transaction> = Transaction.fetchRequest()
         
+        let dateSort = NSSortDescriptor(key: "transactionDate", ascending: false)
+        
+        fetchRequest.sortDescriptors = [dateSort]
         do
         {
             transactions = try context.fetch(fetchRequest)
@@ -171,6 +173,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         transaction1.addToIncomes(income1)
         transaction1.addToIncomes(income2)
         transaction1.addToExpenses(expense1)
+//        income1.incomeTransaction = transaction1
+//        income2.incomeTransaction = transaction1
+//        expense1.expenseTransaction = transaction1
 
         do
         {

@@ -667,13 +667,18 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="addExpenseButton" destination="8O0-12-ODD" id="xpV-3F-llb"/>
+                        <outlet property="addIncomeButton" destination="SmZ-r7-Szw" id="9RW-D9-fHb"/>
                         <outlet property="expenseCollectionView" destination="FUU-OP-0mz" id="cPd-6U-N47"/>
                         <outlet property="incomeCollectionView" destination="uqS-ID-4kp" id="OWM-ms-b6m"/>
+                        <outlet property="transactionDateLabel" destination="cHn-UM-CIV" id="Mkb-Vr-VFS"/>
+                        <outlet property="transactionNameLabel" destination="XES-TY-DiR" id="OHP-6W-JoO"/>
+                        <outlet property="transactionNoteTextView" destination="EWb-0H-UoG" id="o2q-42-l6Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sqw-0r-2to" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2254" y="1217"/>
+            <point key="canvasLocation" x="2253.6231884057975" y="1216.7410714285713"/>
         </scene>
         <!--All Transactions-->
         <scene sceneID="5b1-F8-OUN">

@@ -18,6 +18,8 @@ class AddTransactionViewController: UIViewController {
     
     @IBOutlet weak var addTransactionButton: UIButton!
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -95,6 +97,27 @@ class AddTransactionViewController: UIViewController {
             if transactionDescriptionTextView.text.isEmpty
             {
                 transactionDescriptionTextView.text = ""
+            }
+            
+            let newTransaction = Transaction(context: self.context)
+            newTransaction.transactionName = transactionNameTextField.text
+            newTransaction.transactionDescription = transactionDescriptionTextView.text
+            newTransaction.transactionDate = Date()
+            newTransaction.createdAt = Date()
+            newTransaction.transactionBudget = 0
+            
+            do{
+                try context.save()
+                // balik ke satu halaman sebelumnnya
+                self.navigationController?.popViewController(animated: true)
+                
+                // balik ke root controller (halaman pertama kali launch)
+                // self.navigationController?.popToRootViewController(animated: true)
+
+            }
+            catch
+            {
+                
             }
             
         }))

@@ -6,19 +6,26 @@
 //
 
 import UIKit
+import CoreData
 
 class DetailTransactionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    @IBOutlet weak var transactionNameLabel: UILabel!
+    @IBOutlet weak var transactionDateLabel: UILabel!
+    @IBOutlet weak var transactionNoteTextView: UITextView!
+    
+    
+    @IBOutlet weak var addIncomeButton: UIButton!
+    @IBOutlet weak var addExpenseButton: UIButton!
+    
     @IBOutlet weak var incomeCollectionView: UICollectionView!
     @IBOutlet weak var expenseCollectionView: UICollectionView!
-    var transaction: Transaction?
     
-    let dummyIncome = [
-        (incomeName: "income 1", incomeAmount: "Rp. 200.000.00", incomeSource: "dari orang tua"),
-        (incomeName: "income 2", incomeAmount: "Rp. 300.000.00", incomeSource: "dari orang tua"),
-        (incomeName: "income 3", incomeAmount: "Rp. 500.000.00", incomeSource: "dari orang tua"),
-        (incomeName: "income 4", incomeAmount: "Rp. 600.000.00", incomeSource: "dari orang tua")
-    ]
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    var transaction: Transaction?
+    var incomes =  [Income]()
+    var expenses = [Expense]()
     
     let dummyExpense = [
         (expenseName: "expense 1", expenseAmount: "Rp. 200.000.00", expenseNeeds: "makan siang"),
@@ -29,6 +36,12 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        initTransaction()
+        fetchIncome()
+        fetchExpense()
+        print(incomes.count)
+        print(expenses.count)
+        
         // Do any additional setup after loading the view.
         incomeCollectionView.delegate = self
         incomeCollectionView.dataSource = self
@@ -50,6 +63,61 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
         expenseCollectionView.setCollectionViewLayout(incomeLayout, animated: true)
     }
     
+    func initTransaction() {
+        transactionNameLabel.text = transaction?.transactionName
+    
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        transactionDateLabel.text = dateFormatter.string(from: (transaction?.transactionDate!)!)
+                                                        
+        transactionNoteTextView.text = transaction?.transactionDescription
+        transactionNoteTextView.isEditable = false
+        
+        addIncomeButton.tintColor = .systemGreen
+        addExpenseButton.tintColor = .systemRed
+
+    }
+    
+    func fetchIncome()
+    {
+        incomes = []
+        let fetchReq: NSFetchRequest<Income> = Income.fetchRequest()
+        
+//        let pred = NSPredicate(format: "incomeTransaction CONTAINS '\(transaction)'")
+//
+//        fetchReq.predicate = pred
+        
+        do
+        {
+            incomes = try context.fetch(fetchReq)
+        }
+        
+        catch
+        {
+            
+        }
+    }
+    
+    func fetchExpense()
+    {
+        expenses = []
+        let fetchReq: NSFetchRequest<Expense> = Expense.fetchRequest()
+        
+//        let pred = NSPredicate(format: "incomeTransaction CONTAINS '\(transaction)'")
+//
+//        fetchReq.predicate = pred
+        
+        do
+        {
+            expenses = try context.fetch(fetchReq)
+        }
+        
+        catch
+        {
+            
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 1.0, left: 1.0, bottom: 1.0, right: 1.0)
     }
@@ -62,18 +130,17 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if(collectionView == incomeCollectionView) {
-            return dummyIncome.count
-        } else {
+        if(collectionView == expenseCollectionView) {
             return dummyExpense.count
         }
+        return incomes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if (collectionView == incomeCollectionView) {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "income_cell", for: indexPath) as! IncomeCell
-            let incomes = dummyIncome[indexPath.row]
+            let incomes = incomes[indexPath.row]
             
             cell.backgroundColor = .systemGreen
             cell.layer.cornerRadius = 15
@@ -84,14 +151,16 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
             cell.incomeSourceSymbol.tintColor = .white
             
             cell.incomeName.text = incomes.incomeName
-            cell.incomeAmount.text = incomes.incomeAmount
+            
+            let textIncomeAmount = "\(Int(incomes.incomeAmount))"
+            cell.incomeAmount.text = textIncomeAmount
             cell.incomeSource.text = incomes.incomeSource
             
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "expense_cell", for: indexPath) as! ExpenseCell
             let expenses = dummyExpense[indexPath.row]
-            
+
             cell.backgroundColor = .systemRed
             cell.layer.cornerRadius = 15
             cell.expenseName.textColor = .white
@@ -99,11 +168,13 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
             cell.expenseNeeds.textColor = .white
             cell.expenseNeedsSymbol.tintColor = .white
             cell.expenseAmountSymbol.tintColor = .white
-            
+
             cell.expenseName.text = expenses.expenseName
-            cell.expenseAmount.text = expenses.expenseAmount
+
+//            let textExpenseAmount = "\(Int(expenses.expenseAmount))"
+//            cell.expenseAmount.text = textExpenseAmount
             cell.expenseNeeds.text = expenses.expenseNeeds
-            
+
             return cell
         }
        
@@ -112,7 +183,7 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if(collectionView == incomeCollectionView) {
-            let item = dummyIncome[indexPath.row]
+            let item = incomes[indexPath.row]
             let sheet = UIAlertController(title: "Action for Income", message: nil, preferredStyle: .actionSheet)
             sheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             sheet.addAction(UIAlertAction(title: "See Detail", style: .default, handler: {_ in
@@ -134,7 +205,7 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
             
             present(sheet, animated: true)
         } else {
-            let item = dummyIncome[indexPath.row]
+            let item = dummyExpense[indexPath.row]
             let sheet = UIAlertController(title: "Action for Expense", message: nil, preferredStyle: .actionSheet)
             sheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             sheet.addAction(UIAlertAction(title: "See Detail", style: .default, handler: {_ in
