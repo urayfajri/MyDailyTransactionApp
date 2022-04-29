@@ -213,6 +213,7 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
             sheet.addAction(UIAlertAction(title: "See Detail", style: .default, handler: {_ in
                 
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "expense_detail") as! DetailExpenseViewController
+                vc.expense = expense
                 self.navigationController?.pushViewController(vc, animated: true)
                 
             }))
@@ -292,5 +293,10 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
         {
 
         }
+    }
+    @IBAction func editButtonTapped(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "edit_transaction") as! EditTransactionViewController
+        vc.transaction = transaction
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

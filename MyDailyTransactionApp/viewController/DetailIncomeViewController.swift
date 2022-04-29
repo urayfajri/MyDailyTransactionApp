@@ -21,10 +21,10 @@ class DetailIncomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initTransaction()
+        initIncome()
     }
     
-    func initTransaction() {
+    func initIncome() {
         incomeNameLabel.text = income?.incomeName
         
         let incomeAmountTxt = income?.incomeAmount ?? 0.0

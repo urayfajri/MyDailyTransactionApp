@@ -8,22 +8,58 @@
 import UIKit
 
 class DetailExpenseViewController: UIViewController {
-
+    
+    @IBOutlet weak var expenseNameLabel: UILabel!
+    @IBOutlet weak var expenseAmountLabel: UILabel!
+    @IBOutlet weak var expenseNeedsLabel: UILabel!
+    @IBOutlet weak var expenseDescriptionTextView: UITextView!
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    var expense: Expense?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        initExpense()
     }
     
+    func initExpense() {
+        expenseNameLabel.text = expense?.expenseName
+        
+        let expenseAmountTxt = expense?.expenseAmount ?? 0.0
+        expenseAmountLabel.text = "Rp. \(expenseAmountTxt)"
+        expenseNeedsLabel.text = expense?.expenseNeeds
+        expenseDescriptionTextView.text = expense?.expenseDescription
+        expenseDescriptionTextView.isEditable = false
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
+    
+    @IBAction func trashButtonTapped(_ sender: Any) {
+        let alertControl = UIAlertController(title: "Delete", message: "Are you sure want to delete this Expense?", preferredStyle: .alert)
+        alertControl.addAction(UIAlertAction(title: "No", style: .cancel, handler: {_ in
+            alertControl.dismiss(animated: true, completion: nil)
+        }))
+        alertControl.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { [self]_ in
+            self.deleteItem(item: expense!)
+            self.navigationController?.popViewController(animated: true)
+        }))
+        
+        self.present(alertControl, animated: true)
+    }
+    
+    func deleteItem(item: Expense)
+    {
+        context.delete(item)
+        
+        do
+        {
+            try context.save()
+        }
+        catch
+        {
 
+        }
+    }
 }

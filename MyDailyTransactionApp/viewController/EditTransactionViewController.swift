@@ -16,13 +16,17 @@ class EditTransactionViewController: UIViewController {
     @IBOutlet weak var validateTransactionName: UILabel!
     @IBOutlet weak var validateTransactionDate: UILabel!
     
-    
     @IBOutlet weak var editTransactionButton: UIButton!
+    
+    var transaction: Transaction?
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        resetForm()
+        fetchEditedTransaction()
+        updateForm()
         setUpElements()
 
     }
@@ -34,20 +38,19 @@ class EditTransactionViewController: UIViewController {
         CustomElements.styleFilledButtonEdit(editTransactionButton)
     }
     
-    func resetForm() {
-        editTransactionButton.isEnabled = false
-        
-        validateTransactionName.isHidden = false
-        validateTransactionDate.isHidden = true
-            
-        // empty text field
-        transactionNameTextField.text = ""
-        transactionDescriptionTextView.text = ""
-        
-        let dateFormat = DateFormatter()
-        dateFormat.dateStyle = .medium
-        self.transactionDateTextField.text = dateFormat.string(from: Date())
-        transactionDateTextField.isEnabled = false
+    func updateForm() {
+        if let transactionName = transactionNameTextField.text
+        {
+            if let errorMessage = invalidTransactionName(transactionName)
+            {
+                validateTransactionName.text = errorMessage
+                validateTransactionName.isHidden = false
+            } else
+            {
+                validateTransactionName.isHidden = true
+            }
+        }
+        checkValidForm()
 
     }
 
@@ -99,9 +102,40 @@ class EditTransactionViewController: UIViewController {
                 transactionDescriptionTextView.text = ""
             }
             
+            updateTransaction(item: transaction!)
         }))
         
         self.present(alertControl, animated: true)
+    }
+    
+    func updateTransaction(item: Transaction) {
+        item.transactionName = transactionNameTextField.text
+        item.transactionDescription = transactionDescriptionTextView.text
+        
+        do{
+            
+            try context.save()
+            
+            self.navigationController?.popViewController(animated: true)
+        }
+        catch
+        {
+            
+        }
+    }
+    
+    func fetchEditedTransaction()
+    {
+        transactionNameTextField.text = transaction?.transactionName
+        transactionDescriptionTextView.text = transaction?.transactionDescription
+
+        // fetch transaction date
+        let dateFormat = DateFormatter()
+        dateFormat.dateStyle = .medium
+        transactionDateTextField.text = dateFormat.string(from: (transaction?.transactionDate)!)
+        transactionDateTextField.isEnabled = false
+        validateTransactionDate.isHidden = true
+
     }
     
 }
