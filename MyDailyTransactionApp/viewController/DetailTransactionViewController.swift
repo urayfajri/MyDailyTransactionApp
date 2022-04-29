@@ -26,12 +26,6 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
     var transaction: Transaction?
     var incomes =  [Income]()
     var expenses = [Expense]()
-    
-    let dummyExpense = [
-        (expenseName: "expense 1", expenseAmount: "Rp. 200.000.00", expenseNeeds: "makan siang"),
-        (expenseName: "expense 2", expenseAmount: "Rp. 500.000.00", expenseNeeds: "makan siang"),
-        (expenseName: "expense 3", expenseAmount: "Rp. 700.000.00", expenseNeeds: "makan siang"),
-    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +54,7 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
         expenseLayout.scrollDirection = .horizontal
         expenseLayout.minimumLineSpacing = 10
         expenseLayout.minimumInteritemSpacing = 10
-        expenseCollectionView.setCollectionViewLayout(incomeLayout, animated: true)
+        expenseCollectionView.setCollectionViewLayout(expenseLayout, animated: true)
     }
     
     func initTransaction() {
@@ -131,9 +125,10 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if(collectionView == expenseCollectionView) {
-            return dummyExpense.count
+            return expenses.count
+        } else {
+            return incomes.count
         }
-        return incomes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -159,7 +154,7 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "expense_cell", for: indexPath) as! ExpenseCell
-            let expenses = dummyExpense[indexPath.row]
+            let expenses = expenses[indexPath.row]
 
             cell.backgroundColor = .systemRed
             cell.layer.cornerRadius = 15
@@ -171,8 +166,8 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
 
             cell.expenseName.text = expenses.expenseName
 
-//            let textExpenseAmount = "\(Int(expenses.expenseAmount))"
-//            cell.expenseAmount.text = textExpenseAmount
+            let textExpenseAmount = "\(Int(expenses.expenseAmount))"
+            cell.expenseAmount.text = textExpenseAmount
             cell.expenseNeeds.text = expenses.expenseNeeds
 
             return cell
@@ -205,7 +200,7 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
             
             present(sheet, animated: true)
         } else {
-            let item = dummyExpense[indexPath.row]
+            let item = expenses[indexPath.row]
             let sheet = UIAlertController(title: "Action for Expense", message: nil, preferredStyle: .actionSheet)
             sheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             sheet.addAction(UIAlertAction(title: "See Detail", style: .default, handler: {_ in
