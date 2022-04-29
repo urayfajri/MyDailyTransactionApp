@@ -91,6 +91,7 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
             incomeCollectionView.isHidden = true
             emptyIncomeLabel.isHidden = false
         } else {
+            incomeCollectionView.isHidden = false
             emptyIncomeLabel.isHidden = true
         }
     }
@@ -105,6 +106,7 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
             expenseCollectionView.isHidden = true
             emptyExpenseLabel.isHidden = false
         } else {
+            expenseCollectionView.isHidden = false
             emptyExpenseLabel.isHidden = true
         }
     }
