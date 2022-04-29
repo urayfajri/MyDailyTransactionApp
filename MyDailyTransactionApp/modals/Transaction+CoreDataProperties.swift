@@ -23,6 +23,22 @@ extension Transaction {
     @NSManaged public var transactionBudget: Double
     @NSManaged public var incomes: NSSet?
     @NSManaged public var expenses: NSSet?
+    
+    public var incomeArray : [Income]?
+        {
+            get
+            {
+                return incomes?.allObjects as? [Income]
+            }
+        }
+    
+    public var expenseArray : [Expense]?
+        {
+            get
+            {
+                return expenses?.allObjects as? [Expense]
+            }
+        }
 
 }
 

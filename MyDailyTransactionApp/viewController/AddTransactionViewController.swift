@@ -110,9 +110,6 @@ class AddTransactionViewController: UIViewController {
                 try context.save()
                 // balik ke satu halaman sebelumnnya
                 self.navigationController?.popViewController(animated: true)
-                
-                // balik ke root controller (halaman pertama kali launch)
-                // self.navigationController?.popToRootViewController(animated: true)
 
             }
             catch

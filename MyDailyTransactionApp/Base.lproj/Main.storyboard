@@ -419,7 +419,7 @@
                                                                     <backgroundConfiguration key="background" cornerRadius="20"/>
                                                                 </buttonConfiguration>
                                                                 <connections>
-                                                                    <segue destination="tiz-7L-ZMK" kind="show" id="TcN-R5-b3s"/>
+                                                                    <action selector="addIncomeTapped:" destination="EJu-UD-WlK" eventType="touchUpInside" id="UHA-I4-e5R"/>
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fm8-vD-pey">
@@ -537,7 +537,7 @@
                                                                     <backgroundConfiguration key="background" cornerRadius="20"/>
                                                                 </buttonConfiguration>
                                                                 <connections>
-                                                                    <segue destination="rDO-Ha-Mqt" kind="show" id="wYW-IW-Adu"/>
+                                                                    <action selector="addExpenseTapped:" destination="EJu-UD-WlK" eventType="touchUpInside" id="sUS-j2-JOw"/>
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DVb-QV-r46">
@@ -1222,7 +1222,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jY8-dR-pCI">
-                                <rect key="frame" x="20" y="88" width="374" height="669"/>
+                                <rect key="frame" x="20" y="44" width="374" height="713"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LO2-oY-NPg">
                                         <rect key="frame" x="0.0" y="20" width="374" height="559.5"/>
@@ -1240,6 +1240,9 @@
                                                         <rect key="frame" x="0.0" y="28" width="374" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="incomeNameChanged:" destination="tiz-7L-ZMK" eventType="editingChanged" id="JjK-JF-EJm"/>
+                                                        </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Income Name is Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c83-4t-L0H">
                                                         <rect key="frame" x="0.0" y="67" width="374" height="13.5"/>
@@ -1262,6 +1265,9 @@
                                                         <rect key="frame" x="0.0" y="28" width="374" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="incomeAmountChanged:" destination="tiz-7L-ZMK" eventType="editingChanged" id="4hh-3D-RjE"/>
+                                                        </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Income Amount is Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBh-pd-UrG">
                                                         <rect key="frame" x="0.0" y="67" width="374" height="13.5"/>
@@ -1284,6 +1290,9 @@
                                                         <rect key="frame" x="0.0" y="28" width="374" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="incomeSourceChanged:" destination="tiz-7L-ZMK" eventType="editingChanged" id="jfE-YG-sXe"/>
+                                                        </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Income Source is Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7q-DT-lJb">
                                                         <rect key="frame" x="0.0" y="67" width="374" height="13.5"/>
@@ -1334,6 +1343,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Add Income"/>
+                                <connections>
+                                    <action selector="addButtonTapped:" destination="tiz-7L-ZMK" eventType="touchUpInside" id="0C8-A0-Q6u"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Tk3-iP-yQW"/>
@@ -1350,6 +1362,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Income" id="XcS-5P-5kX"/>
+                    <connections>
+                        <outlet property="addIncomeButton" destination="hXW-J1-qX0" id="jra-mw-I5i"/>
+                        <outlet property="incomeAmountTextField" destination="AOr-Or-xIF" id="9zY-Ig-48B"/>
+                        <outlet property="incomeDescriptionTextView" destination="267-J2-3gJ" id="2bV-VL-Sj1"/>
+                        <outlet property="incomeNameTextField" destination="cIf-pV-n2u" id="wfg-0R-ADh"/>
+                        <outlet property="incomeSourceTextField" destination="rwA-15-oFy" id="3Zp-UN-JLI"/>
+                        <outlet property="validateIncomeAmount" destination="QBh-pd-UrG" id="ddU-7y-rA0"/>
+                        <outlet property="validateIncomeName" destination="c83-4t-L0H" id="vPf-pX-sQO"/>
+                        <outlet property="validateIncomeSource" destination="D7q-DT-lJb" id="RIG-Up-N1U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hg3-O7-T0i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1364,7 +1386,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g4V-Up-IPA">
-                                <rect key="frame" x="20" y="88" width="374" height="669"/>
+                                <rect key="frame" x="20" y="44" width="374" height="713"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qtI-LM-fh3">
                                         <rect key="frame" x="0.0" y="20" width="374" height="559.5"/>
@@ -1382,6 +1404,9 @@
                                                         <rect key="frame" x="0.0" y="28" width="374" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="expenseNameChanged:" destination="rDO-Ha-Mqt" eventType="editingChanged" id="8aG-xW-CMV"/>
+                                                        </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expense Name is Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4y-hN-IOV">
                                                         <rect key="frame" x="0.0" y="67" width="374" height="13.5"/>
@@ -1404,6 +1429,9 @@
                                                         <rect key="frame" x="0.0" y="28" width="374" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="expenseAmountTapped:" destination="rDO-Ha-Mqt" eventType="editingChanged" id="auG-iP-18m"/>
+                                                        </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expense Amount is Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yuy-23-203">
                                                         <rect key="frame" x="0.0" y="67" width="374" height="13.5"/>
@@ -1426,6 +1454,9 @@
                                                         <rect key="frame" x="0.0" y="28" width="374" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="expenseNeedsChanged:" destination="rDO-Ha-Mqt" eventType="editingChanged" id="LKH-gP-IHb"/>
+                                                        </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Income Needs is Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1A9-wf-cOs">
                                                         <rect key="frame" x="0.0" y="67" width="374" height="13.5"/>
@@ -1476,6 +1507,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Add Expense"/>
+                                <connections>
+                                    <action selector="addExpenseTapped:" destination="rDO-Ha-Mqt" eventType="touchUpInside" id="4fS-ud-vnW"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ic3-TS-KEm"/>
@@ -1492,6 +1526,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Expense" id="Kx4-ha-2wv"/>
+                    <connections>
+                        <outlet property="addExpenseButton" destination="Ghn-UG-muf" id="KLd-NV-XFg"/>
+                        <outlet property="expenseAmountTextField" destination="F4T-ND-zqx" id="EBq-oz-ykT"/>
+                        <outlet property="expenseDescriptionTextView" destination="uOW-JC-9uu" id="PQz-Qg-izo"/>
+                        <outlet property="expenseNameTextField" destination="Tue-bQ-Fqb" id="KlC-Ed-9Cd"/>
+                        <outlet property="expenseNeedsTextField" destination="dHW-an-FZ9" id="vHW-66-EB6"/>
+                        <outlet property="validateExpenseAmount" destination="Yuy-23-203" id="jyr-tf-QI7"/>
+                        <outlet property="validateExpenseName" destination="x4y-hN-IOV" id="ZXQ-q1-kiq"/>
+                        <outlet property="validateExpenseNeeds" destination="1A9-wf-cOs" id="hk4-nF-QBY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BI6-Or-UJ2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1637,7 +1681,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KVT-2v-CO1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3781" y="2553"/>
+            <point key="canvasLocation" x="3780" y="2553"/>
         </scene>
         <!--Edit Expense-->
         <scene sceneID="YG5-re-zTq">

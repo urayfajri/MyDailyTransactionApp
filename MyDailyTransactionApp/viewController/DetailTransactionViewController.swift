@@ -58,7 +58,10 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
     override func viewWillAppear(_ animated: Bool) {
         initTransaction()
         fetchIncome()
+        incomeCollectionView.reloadData()
+        
         fetchExpense()
+        expenseCollectionView.reloadData()
     }
     
     func initTransaction() {
@@ -78,41 +81,23 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
     
     func fetchIncome()
     {
-        incomes = []
-        let fetchReq: NSFetchRequest<Income> = Income.fetchRequest()
-        
-//        let pred = NSPredicate(format: "incomeTransaction CONTAINS '\(transaction)'")
-//
-//        fetchReq.predicate = pred
-        
-        do
-        {
-            incomes = try context.fetch(fetchReq)
+        if let datas = transaction?.incomeArray {
+            incomes = datas
         }
         
-        catch
-        {
-            
+        if(incomes.isEmpty) {
+            incomeCollectionView.isHidden = true
         }
     }
     
     func fetchExpense()
     {
-        expenses = []
-        let fetchReq: NSFetchRequest<Expense> = Expense.fetchRequest()
-        
-//        let pred = NSPredicate(format: "incomeTransaction CONTAINS '\(transaction)'")
-//
-//        fetchReq.predicate = pred
-        
-        do
-        {
-            expenses = try context.fetch(fetchReq)
+        if let datas = transaction?.expenseArray {
+            expenses = datas
         }
         
-        catch
-        {
-            
+        if(expenses.isEmpty) {
+            expenseCollectionView.isHidden = true
         }
     }
     
@@ -296,6 +281,18 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
     }
     @IBAction func editButtonTapped(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "edit_transaction") as! EditTransactionViewController
+        vc.transaction = transaction
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func addIncomeTapped(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "add_income") as! AddIncomeViewController
+        vc.transaction = transaction
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func addExpenseTapped(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "add_expense") as! AddExpenseViewController
         vc.transaction = transaction
         self.navigationController?.pushViewController(vc, animated: true)
     }
