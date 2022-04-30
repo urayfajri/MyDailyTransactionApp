@@ -24,6 +24,10 @@ class DetailExpenseViewController: UIViewController {
         initExpense()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        initExpense()
+    }
+    
     func initExpense() {
         expenseNameLabel.text = expense?.expenseName
         

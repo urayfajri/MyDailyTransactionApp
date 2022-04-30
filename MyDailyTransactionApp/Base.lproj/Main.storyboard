@@ -1746,6 +1746,9 @@
                                                         <rect key="frame" x="0.0" y="28" width="374" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="expenseNameChanged:" destination="LrM-e2-KAP" eventType="editingChanged" id="zns-Ox-fpX"/>
+                                                        </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expense Name is Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7LZ-rc-G1e">
                                                         <rect key="frame" x="0.0" y="67" width="374" height="13.5"/>
@@ -1768,6 +1771,9 @@
                                                         <rect key="frame" x="0.0" y="28" width="374" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="expenseAmountChanged:" destination="LrM-e2-KAP" eventType="editingChanged" id="LPa-FH-oko"/>
+                                                        </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expense Amount is Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZU-c3-o7J">
                                                         <rect key="frame" x="0.0" y="67" width="374" height="13.5"/>
@@ -1790,6 +1796,9 @@
                                                         <rect key="frame" x="0.0" y="28" width="374" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="expenseNeedsChanged:" destination="LrM-e2-KAP" eventType="editingChanged" id="f14-4c-QB1"/>
+                                                        </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Income Needs is Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9un-Ah-Vtx">
                                                         <rect key="frame" x="0.0" y="67" width="374" height="13.5"/>
@@ -1840,6 +1849,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Edit Expense"/>
+                                <connections>
+                                    <action selector="editExpenseTapped:" destination="LrM-e2-KAP" eventType="touchUpInside" id="m0u-n3-Ajr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="G8Q-at-TVa"/>
@@ -1856,6 +1868,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Expense" id="Use-fW-r5o"/>
+                    <connections>
+                        <outlet property="editExpenseButton" destination="BVs-8C-y9m" id="Olf-d5-NFa"/>
+                        <outlet property="expenseAmountTextField" destination="I6Y-Ju-PSc" id="uvF-GA-nsJ"/>
+                        <outlet property="expenseDescriptionTextView" destination="suZ-B2-UBo" id="8mc-K3-HSO"/>
+                        <outlet property="expenseNameTextField" destination="8eg-lg-1zM" id="7XV-Y3-GVG"/>
+                        <outlet property="expenseNeedsTextField" destination="LDN-aB-DZ7" id="zVl-mo-xD7"/>
+                        <outlet property="validateExpenseAmount" destination="mZU-c3-o7J" id="Ca1-2x-3FU"/>
+                        <outlet property="validateExpenseName" destination="7LZ-rc-G1e" id="07O-YX-2Yu"/>
+                        <outlet property="validateExpenseNeeds" destination="9un-Ah-Vtx" id="rRm-t1-cB7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pV8-VS-emT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

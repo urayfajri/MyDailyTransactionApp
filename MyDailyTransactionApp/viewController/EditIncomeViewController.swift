@@ -37,6 +37,8 @@ class EditIncomeViewController: UIViewController {
     func setUpElements() {
         
         CustomElements.styleTextField(incomeNameTextField)
+        CustomElements.styleTextField(incomeAmountTextField)
+        CustomElements.styleTextField(incomeSourceTextField)
         CustomElements.styleTextView(incomeDescriptionTextView)
         CustomElements.styleFilledButtonEdit(editIncomeButton)
     }
