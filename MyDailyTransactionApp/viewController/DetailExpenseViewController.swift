@@ -36,6 +36,12 @@ class DetailExpenseViewController: UIViewController {
 
     }
     
+    @IBAction func editButtonTapped(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "edit_expense") as! EditExpenseViewController
+        vc.expense = expense
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @IBAction func trashButtonTapped(_ sender: Any) {
         let alertControl = UIAlertController(title: "Delete", message: "Are you sure want to delete this Expense?", preferredStyle: .alert)
         alertControl.addAction(UIAlertAction(title: "No", style: .cancel, handler: {_ in

@@ -215,7 +215,7 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
             sheet.addAction(UIAlertAction(title: "Edit", style: .default, handler: {_ in
                 
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "edit_expense") as! EditExpenseViewController
-                // vc.expense = expense
+                vc.expense = expense
                 self.navigationController?.pushViewController(vc, animated: true)
                 
             }))

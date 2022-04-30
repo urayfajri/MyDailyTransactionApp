@@ -1019,7 +1019,7 @@
                             </barButtonItem>
                             <barButtonItem title="Edit" id="BnR-aZ-U2M">
                                 <connections>
-                                    <segue destination="aVn-PN-R49" kind="show" id="5hD-do-shV"/>
+                                    <action selector="editButtonTapped:" destination="EHN-hc-RTI" id="kdD-33-T8o"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -1193,7 +1193,7 @@
                             </barButtonItem>
                             <barButtonItem title="Edit" id="gDw-G5-NXX">
                                 <connections>
-                                    <segue destination="LrM-e2-KAP" kind="show" id="QoX-kN-BpV"/>
+                                    <action selector="editButtonTapped:" destination="jSe-77-d6h" id="iW9-Pt-zzM"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -1564,7 +1564,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xVA-B8-oX1">
-                                <rect key="frame" x="20" y="88" width="374" height="669"/>
+                                <rect key="frame" x="20" y="44" width="374" height="713"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0LC-3c-Wzr">
                                         <rect key="frame" x="0.0" y="20" width="374" height="559.5"/>
@@ -1582,6 +1582,9 @@
                                                         <rect key="frame" x="0.0" y="28" width="374" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="incomeNameChanged:" destination="aVn-PN-R49" eventType="editingChanged" id="R6x-nC-Ujv"/>
+                                                        </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Income Name is Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61F-c4-jsj">
                                                         <rect key="frame" x="0.0" y="67" width="374" height="13.5"/>
@@ -1604,6 +1607,9 @@
                                                         <rect key="frame" x="0.0" y="28" width="374" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="incomeAmountChanged:" destination="aVn-PN-R49" eventType="editingChanged" id="26l-5W-3mx"/>
+                                                        </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Income Amount is Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CuN-6E-Yam">
                                                         <rect key="frame" x="0.0" y="67" width="374" height="13.5"/>
@@ -1626,6 +1632,9 @@
                                                         <rect key="frame" x="0.0" y="28" width="374" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="incomeSource:" destination="aVn-PN-R49" eventType="editingChanged" id="e9M-Wh-Rkg"/>
+                                                        </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Income Source is Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Pn-hG-wvw">
                                                         <rect key="frame" x="0.0" y="67" width="374" height="13.5"/>
@@ -1676,6 +1685,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Edit Income"/>
+                                <connections>
+                                    <action selector="editButtonTapped:" destination="aVn-PN-R49" eventType="touchUpInside" id="Jsj-3l-aya"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kV1-16-rF2"/>
@@ -1692,6 +1704,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Income" id="TIH-R7-SVx"/>
+                    <connections>
+                        <outlet property="editIncomeButton" destination="1CL-T4-gcS" id="Cee-iC-Hb8"/>
+                        <outlet property="incomeAmountTextField" destination="eOl-sf-gNc" id="FbK-H2-k7l"/>
+                        <outlet property="incomeDescriptionTextView" destination="3ea-Ls-yAp" id="JnR-2X-q0P"/>
+                        <outlet property="incomeNameTextField" destination="CfJ-Sr-AFJ" id="GZR-mF-X4K"/>
+                        <outlet property="incomeSourceTextField" destination="Wns-53-ZND" id="DRB-r3-DKs"/>
+                        <outlet property="validateIncomeAmount" destination="CuN-6E-Yam" id="pZC-qI-SZq"/>
+                        <outlet property="validateIncomeName" destination="61F-c4-jsj" id="uLS-vL-HeS"/>
+                        <outlet property="validateIncomeSource" destination="2Pn-hG-wvw" id="l26-MW-wfj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KVT-2v-CO1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1706,7 +1728,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kPg-q6-x8g">
-                                <rect key="frame" x="20" y="88" width="374" height="669"/>
+                                <rect key="frame" x="20" y="44" width="374" height="713"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LZ5-ui-hUJ">
                                         <rect key="frame" x="0.0" y="20" width="374" height="559.5"/>

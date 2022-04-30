@@ -24,6 +24,10 @@ class DetailIncomeViewController: UIViewController {
         initIncome()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        initIncome()
+    }
+    
     func initIncome() {
         incomeNameLabel.text = income?.incomeName
         
@@ -34,6 +38,12 @@ class DetailIncomeViewController: UIViewController {
         incomeDescriptionTextView.isEditable = false
         
 
+    }
+    
+    @IBAction func editButtonTapped(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "edit_income") as! EditIncomeViewController
+        vc.income = income
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func trashButtonTapped(_ sender: Any) {
