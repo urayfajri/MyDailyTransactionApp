@@ -28,13 +28,24 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
     var transaction: Transaction?
     var incomes =  [Income]()
     var expenses = [Expense]()
-
+    
+    @IBOutlet weak var totalIncomeLabel: UILabel!
+    @IBOutlet weak var totalExpenseLabel: UILabel!
+    @IBOutlet weak var totalBudgetLabel: UILabel!
+    @IBOutlet weak var totalBudgetCurrLabel: UILabel!
+    @IBOutlet weak var totalBudgetTextLabel: UILabel!
+    
+    var totalIncome:Double = 0
+    var totalExpense:Double = 0
+    var totalBudget:Double = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         initTransaction()
         fetchIncome()
         fetchExpense()
+        calculateTransactionBudget()
         
         // Do any additional setup after loading the view.
         incomeCollectionView.delegate = self
@@ -64,6 +75,8 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
         
         fetchExpense()
         expenseCollectionView.reloadData()
+        
+        calculateTransactionBudget()
     }
     
     func initTransaction() {
@@ -87,12 +100,20 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
             incomes = datas
         }
         
+        totalIncome = 0
         if(incomes.isEmpty) {
             incomeCollectionView.isHidden = true
             emptyIncomeLabel.isHidden = false
+            
+            totalIncomeLabel.text = "0"
         } else {
             incomeCollectionView.isHidden = false
             emptyIncomeLabel.isHidden = true
+            
+            for income in incomes {
+                totalIncome += income.incomeAmount
+            }
+            totalIncomeLabel.text = "\(totalIncome)"
         }
     }
     
@@ -102,12 +123,20 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
             expenses = datas
         }
         
+        totalExpense = 0
         if(expenses.isEmpty) {
             expenseCollectionView.isHidden = true
             emptyExpenseLabel.isHidden = false
+            
+            totalExpenseLabel.text = "0"
         } else {
             expenseCollectionView.isHidden = false
             emptyExpenseLabel.isHidden = true
+    
+            for expense in expenses {
+                totalExpense += expense.expenseAmount
+            }
+            totalExpenseLabel.text = "\(totalExpense)"
         }
     }
     
@@ -305,5 +334,21 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "add_expense") as! AddExpenseViewController
         vc.transaction = transaction
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func calculateTransactionBudget() {
+        if (totalIncome >= totalExpense) {
+            totalBudget = totalIncome - totalExpense
+            totalBudgetLabel.textColor = .systemGreen
+            totalBudgetCurrLabel.textColor = .systemGreen
+            totalBudgetTextLabel.textColor = .systemGreen
+            totalBudgetLabel.text = "\(totalBudget)"
+        } else {
+            totalBudget = totalExpense - totalIncome
+            totalBudgetLabel.textColor = .systemRed
+            totalBudgetCurrLabel.textColor = .systemRed
+            totalBudgetTextLabel.textColor = .systemRed
+            totalBudgetLabel.text = "\(totalBudget)"
+        }
     }
 }
