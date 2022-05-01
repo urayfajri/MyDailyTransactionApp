@@ -318,9 +318,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hxh-TJ-K9P">
-                                <rect key="frame" x="20" y="102" width="374" height="760"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hxh-TJ-K9P">
+                                <rect key="frame" x="20" y="103" width="374" height="759"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="PtD-FM-Oqj">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="578.5"/>
@@ -657,6 +656,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7Ki-Ti-WqB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Hxh-TJ-K9P" firstAttribute="leading" secondItem="7Ki-Ti-WqB" secondAttribute="leading" constant="20" id="4AU-ol-jGz"/>
+                            <constraint firstItem="Hxh-TJ-K9P" firstAttribute="top" secondItem="7Ki-Ti-WqB" secondAttribute="top" constant="15" id="Vfn-bv-6RM"/>
+                            <constraint firstItem="7Ki-Ti-WqB" firstAttribute="trailing" secondItem="Hxh-TJ-K9P" secondAttribute="trailing" constant="20" id="d9S-AY-YUe"/>
+                            <constraint firstItem="Hxh-TJ-K9P" firstAttribute="bottom" secondItem="7Ki-Ti-WqB" secondAttribute="bottom" id="eWv-XS-l7Q"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail Transaction" id="cV0-5P-4Ui">
                         <rightBarButtonItems>
@@ -887,9 +892,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H1n-eu-srl">
-                                <rect key="frame" x="20" y="102" width="374" height="760"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H1n-eu-srl">
+                                <rect key="frame" x="20" y="103" width="374" height="759"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-e4-2cD">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="296.5"/>
@@ -1008,6 +1012,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="m00-Po-C6D"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="H1n-eu-srl" firstAttribute="bottom" secondItem="m00-Po-C6D" secondAttribute="bottom" id="3Ak-ar-b8G"/>
+                            <constraint firstItem="H1n-eu-srl" firstAttribute="leading" secondItem="m00-Po-C6D" secondAttribute="leading" constant="20" id="pQC-uo-S4a"/>
+                            <constraint firstItem="H1n-eu-srl" firstAttribute="top" secondItem="m00-Po-C6D" secondAttribute="top" constant="15" id="u9i-Er-ARq"/>
+                            <constraint firstItem="m00-Po-C6D" firstAttribute="trailing" secondItem="H1n-eu-srl" secondAttribute="trailing" constant="20" id="wOQ-eU-lbD"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail Income" id="lhn-2q-FNw">
                         <rightBarButtonItems>
@@ -1061,9 +1071,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X4d-Gx-dVJ">
-                                <rect key="frame" x="20" y="102" width="374" height="760"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4d-Gx-dVJ">
+                                <rect key="frame" x="20" y="103" width="374" height="759"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="qKM-sf-EAl">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="296.5"/>
@@ -1182,6 +1191,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="udA-7x-k8f"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="X4d-Gx-dVJ" firstAttribute="leading" secondItem="udA-7x-k8f" secondAttribute="leading" constant="20" id="Rbs-7I-ZZV"/>
+                            <constraint firstItem="udA-7x-k8f" firstAttribute="trailing" secondItem="X4d-Gx-dVJ" secondAttribute="trailing" constant="20" id="a0b-oz-WcH"/>
+                            <constraint firstItem="X4d-Gx-dVJ" firstAttribute="bottom" secondItem="udA-7x-k8f" secondAttribute="bottom" id="gnz-r7-9qR"/>
+                            <constraint firstItem="X4d-Gx-dVJ" firstAttribute="top" secondItem="udA-7x-k8f" secondAttribute="top" constant="15" id="lzp-Fo-iLE"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail Expense" id="xXJ-8q-puK">
                         <rightBarButtonItems>
@@ -1885,7 +1900,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Nqd-zq-F7f"/>
+        <segue reference="kI1-QL-m3k"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="calendar" catalog="system" width="128" height="106"/>
