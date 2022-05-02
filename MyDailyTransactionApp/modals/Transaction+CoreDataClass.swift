@@ -2,7 +2,7 @@
 //  Transaction+CoreDataClass.swift
 //  MyDailyTransactionApp
 //
-//  Created by Uray Muhamad Noor Fajri Widiansyah on 28/04/22.
+//  Created by Uray Muhamad Noor Fajri Widiansyah on 02/05/22.
 //
 //
 

@@ -22,12 +22,13 @@
         <attribute name="transactionDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="transactionDescription" optional="YES" attributeType="String"/>
         <attribute name="transactionName" optional="YES" attributeType="String"/>
+        <attribute name="transactionStatus" optional="YES" attributeType="String"/>
         <relationship name="expenses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Expense" inverseName="expenseTransaction" inverseEntity="Expense"/>
         <relationship name="incomes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Income" inverseName="incomeTransaction" inverseEntity="Income"/>
     </entity>
     <elements>
-        <element name="Income" positionX="-36" positionY="9" width="128" height="119"/>
         <element name="Expense" positionX="0" positionY="81" width="128" height="119"/>
-        <element name="Transaction" positionX="27" positionY="126" width="128" height="134"/>
+        <element name="Income" positionX="-36" positionY="9" width="128" height="119"/>
+        <element name="Transaction" positionX="27" positionY="126" width="128" height="163"/>
     </elements>
 </model>
