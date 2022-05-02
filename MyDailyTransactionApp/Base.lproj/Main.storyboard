@@ -121,7 +121,7 @@
                     <navigationItem key="navigationItem" title="Home" id="0aY-J5-4Hx">
                         <barButtonItem key="rightBarButtonItem" image="plus.app" catalog="system" id="zlc-B4-J5N">
                             <connections>
-                                <segue destination="LnA-ur-PML" kind="show" id="kI1-QL-m3k"/>
+                                <action selector="addButtonTapped:" destination="BYZ-38-t0r" id="lRQ-C4-1Cq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -2002,9 +2002,6 @@
             <point key="canvasLocation" x="3780" y="3313"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="kI1-QL-m3k"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="calendar.circle.fill" catalog="system" width="128" height="121"/>

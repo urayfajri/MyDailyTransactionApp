@@ -249,5 +249,39 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    
+    @IBAction func addButtonTapped(_ sender: Any) {
+        if (transactions.isEmpty) {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "add_transaction") as! AddTransactionViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let dateFormat = DateFormatter()
+            dateFormat.dateStyle = .medium
+            
+            let dateToday = dateFormat.string(from: Date())
+            
+            var alreadyMade = false
+            
+            for transaction in transactions {
+                
+                let transactionDate = dateFormat.string(from: transaction.transactionDate!)
+                if(dateToday == transactionDate){
+                    alreadyMade = true
+                    break
+                }
+            }
+            
+            if(alreadyMade==true) {
+                let alertControl = UIAlertController(title: "Action Canceled", message: "A transaction is already made for today", preferredStyle: .alert)
+                alertControl.addAction(UIAlertAction(title: "OK", style: .cancel, handler: {_ in
+                    alertControl.dismiss(animated: true, completion: nil)
+                }))
+                self.present(alertControl, animated: true)
+            } else {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "add_transaction") as! AddTransactionViewController
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+    }
 }
 
