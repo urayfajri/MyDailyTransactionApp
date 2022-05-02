@@ -105,6 +105,7 @@ class AddTransactionViewController: UIViewController {
             newTransaction.transactionDate = Date()
             newTransaction.createdAt = Date()
             newTransaction.transactionBudget = 0
+            newTransaction.transactionStatus = "Good"
             
             do{
                 try context.save()

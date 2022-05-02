@@ -91,7 +91,7 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
         
         addIncomeButton.tintColor = .systemGreen
         addExpenseButton.tintColor = .systemRed
-
+                
     }
     
     func fetchIncome()
@@ -294,6 +294,7 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
             try context.save()
             fetchIncome()
             fetchExpense()
+            calculateTransactionBudget()
         }
 
         catch
@@ -311,6 +312,7 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
             try context.save()
             fetchIncome()
             fetchExpense()
+            calculateTransactionBudget()
         }
 
         catch
@@ -349,6 +351,24 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
             totalBudgetCurrLabel.textColor = .systemRed
             totalBudgetTextLabel.textColor = .systemRed
             totalBudgetLabel.text = "\(totalBudget)"
+        }
+        updateTransactionStatus(item: transaction!)
+    }
+    
+    func updateTransactionStatus(item: Transaction) {
+        if (totalIncome >= totalExpense) {
+            item.transactionStatus = "Good"
+            item.transactionBudget = totalIncome - totalExpense
+        } else {
+            item.transactionStatus = "Not Good"
+            item.transactionBudget = totalExpense - totalIncome
+        }
+        do{
+            try context.save()
+        }
+        catch
+        {
+            
         }
     }
 }
