@@ -113,7 +113,9 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
             for income in incomes {
                 totalIncome += income.incomeAmount
             }
-            totalIncomeLabel.text = "\(totalIncome)"
+            
+            let totalIncomeFormatNumber = CustomElements.formatNumber(totalIncome)
+            totalIncomeLabel.text = "\(totalIncomeFormatNumber)"
         }
     }
     
@@ -136,7 +138,9 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
             for expense in expenses {
                 totalExpense += expense.expenseAmount
             }
-            totalExpenseLabel.text = "\(totalExpense)"
+            
+            let totalExpenseFormatNumber = CustomElements.formatNumber(totalExpense)
+            totalExpenseLabel.text = "\(totalExpenseFormatNumber)"
         }
     }
     
@@ -175,7 +179,9 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
             
             cell.incomeName.text = incomes.incomeName
             
-            let textIncomeAmount = "\(Int(incomes.incomeAmount))"
+            let incomeFormatNumber = CustomElements.formatNumber(incomes.incomeAmount)
+            
+            let textIncomeAmount = "Rp. \(incomeFormatNumber)"
             cell.incomeAmount.text = textIncomeAmount
             cell.incomeSource.text = incomes.incomeSource
             
@@ -193,8 +199,10 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
             cell.expenseAmountSymbol.tintColor = .white
 
             cell.expenseName.text = expenses.expenseName
+            
+            let expenseFormatNumber = CustomElements.formatNumber(expenses.expenseAmount)
 
-            let textExpenseAmount = "\(Int(expenses.expenseAmount))"
+            let textExpenseAmount = "Rp. \(expenseFormatNumber)"
             cell.expenseAmount.text = textExpenseAmount
             cell.expenseNeeds.text = expenses.expenseNeeds
 
@@ -344,13 +352,17 @@ class DetailTransactionViewController: UIViewController, UICollectionViewDataSou
             totalBudgetLabel.textColor = .systemGreen
             totalBudgetCurrLabel.textColor = .systemGreen
             totalBudgetTextLabel.textColor = .systemGreen
-            totalBudgetLabel.text = "\(totalBudget)"
+            
+            let totalBudgetFormatNumber = CustomElements.formatNumber(totalBudget)
+            totalBudgetLabel.text = "\(totalBudgetFormatNumber)"
         } else {
             totalBudget = totalExpense - totalIncome
             totalBudgetLabel.textColor = .systemRed
             totalBudgetCurrLabel.textColor = .systemRed
             totalBudgetTextLabel.textColor = .systemRed
-            totalBudgetLabel.text = "\(totalBudget)"
+            
+            let totalBudgetFormatNumber = CustomElements.formatNumber(totalBudget)
+            totalBudgetLabel.text = "\(totalBudgetFormatNumber)"
         }
         updateTransactionStatus(item: transaction!)
     }

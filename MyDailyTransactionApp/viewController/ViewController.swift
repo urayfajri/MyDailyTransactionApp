@@ -53,7 +53,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         cell.transactionName.text = transaction.transactionName
         cell.transactionDate.text = dateFormat.string(from: transaction.transactionDate!)
-        cell.transactionBudget.text = "Rp. \(transaction.transactionBudget)"
+        
+        let transactionBudgetFormatNumber = CustomElements.formatNumber(transaction.transactionBudget)
+        cell.transactionBudget.text = "Rp. \(transactionBudgetFormatNumber)"
         
         if(transaction.transactionStatus == "Good") {
             cell.transactionBudget.textColor = .systemGreen
