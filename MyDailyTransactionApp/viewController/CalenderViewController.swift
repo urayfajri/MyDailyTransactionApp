@@ -8,6 +8,10 @@
 import UIKit
 
 class CalenderViewController: UIViewController {
+    
+    private var transactions = [Transaction]()
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,15 +19,38 @@ class CalenderViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func addButtonTapped(_ sender: Any) {
+        if (transactions.isEmpty) {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "add_transaction") as! AddTransactionViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let dateFormat = DateFormatter()
+            dateFormat.dateStyle = .medium
+            
+            let dateToday = dateFormat.string(from: Date())
+            
+            var alreadyMade = false
+            
+            for transaction in transactions {
+                
+                let transactionDate = dateFormat.string(from: transaction.transactionDate!)
+                if(dateToday == transactionDate){
+                    alreadyMade = true
+                    break
+                }
+            }
+            
+            if(alreadyMade==true) {
+                let alertControl = UIAlertController(title: "Action Canceled", message: "A transaction is already made for today", preferredStyle: .alert)
+                alertControl.addAction(UIAlertAction(title: "OK", style: .cancel, handler: {_ in
+                    alertControl.dismiss(animated: true, completion: nil)
+                }))
+                self.present(alertControl, animated: true)
+            } else {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "add_transaction") as! AddTransactionViewController
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
-    */
-
+    
 }
