@@ -18,6 +18,7 @@
 		2001586A2817B49500D02A35 /* MyDailyTransactionAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200158692817B49500D02A35 /* MyDailyTransactionAppUITests.swift */; };
 		2001586C2817B49500D02A35 /* MyDailyTransactionAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2001586B2817B49500D02A35 /* MyDailyTransactionAppUITestsLaunchTests.swift */; };
 		2001587E2819272100D02A35 /* CustomElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2001587D2819272100D02A35 /* CustomElements.swift */; };
+		20292D382823CCDF000A2110 /* TransactionCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20292D372823CCDF000A2110 /* TransactionCalendarCell.swift */; };
 		205D1E7D28200DB3005BA1B1 /* Expense+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205D1E7728200DB3005BA1B1 /* Expense+CoreDataClass.swift */; };
 		205D1E7E28200DB3005BA1B1 /* Expense+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205D1E7828200DB3005BA1B1 /* Expense+CoreDataProperties.swift */; };
 		205D1E7F28200DB3005BA1B1 /* Transaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205D1E7928200DB3005BA1B1 /* Transaction+CoreDataClass.swift */; };
@@ -77,6 +78,7 @@
 		200158692817B49500D02A35 /* MyDailyTransactionAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDailyTransactionAppUITests.swift; sourceTree = "<group>"; };
 		2001586B2817B49500D02A35 /* MyDailyTransactionAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDailyTransactionAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2001587D2819272100D02A35 /* CustomElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomElements.swift; sourceTree = "<group>"; };
+		20292D372823CCDF000A2110 /* TransactionCalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCalendarCell.swift; sourceTree = "<group>"; };
 		205D1E7728200DB3005BA1B1 /* Expense+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataClass.swift"; sourceTree = "<group>"; };
 		205D1E7828200DB3005BA1B1 /* Expense+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		205D1E7928200DB3005BA1B1 /* Transaction+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				20736704281A475A00E0E2F6 /* transactionCell.swift */,
 				20736708281AC0B700E0E2F6 /* IncomeCell.swift */,
 				2073670A281AD42B00E0E2F6 /* ExpenseCell.swift */,
+				20292D372823CCDF000A2110 /* TransactionCalendarCell.swift */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -259,7 +262,6 @@
 				28D2AC4174D86C523EBC82FF /* Pods-MyDailyTransactionAppTests.debug.xcconfig */,
 				83A6D4E873541141DC0B612D /* Pods-MyDailyTransactionAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -504,6 +506,7 @@
 			files = (
 				205D1E8228200DB3005BA1B1 /* Income+CoreDataProperties.swift in Sources */,
 				20922859281929BE0074CCD9 /* CalenderViewController.swift in Sources */,
+				20292D382823CCDF000A2110 /* TransactionCalendarCell.swift in Sources */,
 				2073670B281AD42B00E0E2F6 /* ExpenseCell.swift in Sources */,
 				2001584A2817B49500D02A35 /* ViewController.swift in Sources */,
 				2001587E2819272100D02A35 /* CustomElements.swift in Sources */,

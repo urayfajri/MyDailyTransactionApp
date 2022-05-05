@@ -303,13 +303,111 @@
                                     <constraint firstAttribute="height" constant="300" id="z5J-aU-JjQ"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Transaction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4H-dG-5qv">
+                                <rect key="frame" x="20" y="408" width="374" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6A7-98-Mec">
+                                <rect key="frame" x="20" y="442" width="374" height="400"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HH4-aG-n46">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="110.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don't have any transaction for today" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MrM-oh-sFU">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iq1-lk-U3g">
+                                                <rect key="frame" x="0.0" y="20.5" width="374" height="90"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="90" id="f9u-nl-fy3"/>
+                                                </constraints>
+                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KLs-kz-Ifj">
+                                                    <size key="itemSize" width="374" height="93"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="transaction_calendar_cell" id="aVV-DY-92w" customClass="TransactionCalendarCell" customModule="MyDailyTransactionApp" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="93"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="VVm-dI-Qgg">
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="93"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transaction Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bs4-ct-dim">
+                                                                    <rect key="frame" x="10" y="10" width="364" height="21.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transaction Budget" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p54-Io-3Rh">
+                                                                    <rect key="frame" x="10" y="38" width="364" height="19.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transaction Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCg-yw-6Mm">
+                                                                    <rect key="frame" x="10" y="65.5" width="354" height="18"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="oCg-yw-6Mm" firstAttribute="top" secondItem="p54-Io-3Rh" secondAttribute="bottom" constant="8" symbolic="YES" id="5iN-c1-Yjx"/>
+                                                                <constraint firstItem="Bs4-ct-dim" firstAttribute="leading" secondItem="VVm-dI-Qgg" secondAttribute="leading" constant="10" id="JYO-TR-kzX"/>
+                                                                <constraint firstItem="oCg-yw-6Mm" firstAttribute="leading" secondItem="VVm-dI-Qgg" secondAttribute="leading" constant="10" id="M5P-Sh-Rph"/>
+                                                                <constraint firstAttribute="trailing" secondItem="p54-Io-3Rh" secondAttribute="trailing" id="S7q-bK-wgH"/>
+                                                                <constraint firstAttribute="trailing" secondItem="oCg-yw-6Mm" secondAttribute="trailing" constant="10" id="Uvh-st-5wv"/>
+                                                                <constraint firstItem="p54-Io-3Rh" firstAttribute="top" secondItem="Bs4-ct-dim" secondAttribute="bottom" constant="6.5" id="XvS-VQ-NUP"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Bs4-ct-dim" secondAttribute="trailing" id="c1M-P4-IhN"/>
+                                                                <constraint firstItem="p54-Io-3Rh" firstAttribute="leading" secondItem="VVm-dI-Qgg" secondAttribute="leading" constant="10" id="kE1-SI-Jrl"/>
+                                                                <constraint firstItem="Bs4-ct-dim" firstAttribute="top" secondItem="VVm-dI-Qgg" secondAttribute="top" constant="10" id="yMA-F2-by9"/>
+                                                            </constraints>
+                                                        </collectionViewCellContentView>
+                                                        <size key="customSize" width="374" height="93"/>
+                                                        <connections>
+                                                            <outlet property="transactionCalendarBudget" destination="p54-Io-3Rh" id="yx4-xm-cVU"/>
+                                                            <outlet property="transactionCalendarDate" destination="oCg-yw-6Mm" id="x2d-hQ-1t1"/>
+                                                            <outlet property="transactionCalendarName" destination="Bs4-ct-dim" id="hnB-aY-EaE"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                </cells>
+                                            </collectionView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="HH4-aG-n46" firstAttribute="top" secondItem="BgY-T6-NdG" secondAttribute="top" id="3ji-dL-wcf"/>
+                                    <constraint firstAttribute="height" constant="400" id="Blx-TN-8hC"/>
+                                    <constraint firstItem="HH4-aG-n46" firstAttribute="bottom" secondItem="BgY-T6-NdG" secondAttribute="bottom" id="biz-CI-mAh"/>
+                                    <constraint firstItem="HH4-aG-n46" firstAttribute="width" secondItem="6jf-d3-cCj" secondAttribute="width" id="rOa-Jd-2lC"/>
+                                    <constraint firstItem="HH4-aG-n46" firstAttribute="leading" secondItem="BgY-T6-NdG" secondAttribute="leading" id="rUj-il-PwY"/>
+                                    <constraint firstItem="HH4-aG-n46" firstAttribute="trailing" secondItem="BgY-T6-NdG" secondAttribute="trailing" id="zAJ-UL-XUC"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="BgY-T6-NdG"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="6jf-d3-cCj"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1EM-3M-YPm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="U4H-dG-5qv" firstAttribute="leading" secondItem="1EM-3M-YPm" secondAttribute="leading" constant="20" id="2Qh-kt-kqk"/>
+                            <constraint firstItem="U4H-dG-5qv" firstAttribute="top" secondItem="jHE-H2-Er0" secondAttribute="bottom" constant="20" id="4mO-vn-KGg"/>
                             <constraint firstItem="1EM-3M-YPm" firstAttribute="trailing" secondItem="jHE-H2-Er0" secondAttribute="trailing" constant="10" id="5ne-AR-PEG"/>
+                            <constraint firstItem="6A7-98-Mec" firstAttribute="leading" secondItem="1EM-3M-YPm" secondAttribute="leading" constant="20" id="5rE-SG-CUK"/>
                             <constraint firstItem="jHE-H2-Er0" firstAttribute="leading" secondItem="1EM-3M-YPm" secondAttribute="leading" constant="10" id="C1v-71-Sx0"/>
                             <constraint firstItem="jHE-H2-Er0" firstAttribute="top" secondItem="1EM-3M-YPm" secondAttribute="top" id="XN1-tj-x0G"/>
+                            <constraint firstItem="1EM-3M-YPm" firstAttribute="trailing" secondItem="U4H-dG-5qv" secondAttribute="trailing" constant="20" id="Yio-7K-6hC"/>
+                            <constraint firstItem="1EM-3M-YPm" firstAttribute="trailing" secondItem="6A7-98-Mec" secondAttribute="trailing" constant="20" id="pdQ-dW-Fqx"/>
+                            <constraint firstItem="6A7-98-Mec" firstAttribute="top" secondItem="U4H-dG-5qv" secondAttribute="bottom" constant="8.5" id="vkg-5W-H7q"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="hNN-4c-ePx">
@@ -321,6 +419,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="calendar" destination="jHE-H2-Er0" id="fdP-TS-Hy0"/>
+                        <outlet property="emptyTransactionLabel" destination="MrM-oh-sFU" id="U81-tG-hWq"/>
+                        <outlet property="transactionCollectionView" destination="iq1-lk-U3g" id="EEL-KZ-pha"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EFa-XC-EKW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
