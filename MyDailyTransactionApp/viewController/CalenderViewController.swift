@@ -25,6 +25,9 @@ class CalenderViewController: UIViewController, FSCalendarDelegate, UICollection
         
         getAllTransactions()
         
+        //get transaction for today
+        getTransactionByCalendar(selectedDate: Date())
+        
         calendar.delegate = self
         
         transactionCollectionView.delegate = self
@@ -45,17 +48,7 @@ class CalenderViewController: UIViewController, FSCalendarDelegate, UICollection
         do
         {
             transactions = try context.fetch(fetchRequest)
-                    
-            if(transactions.isEmpty)
-            {
-//                hintLabel.isHidden = true
-//                emptyList.isHidden = false
-//                emptyList.text = "You haven’t create any transaction\nStart create one now!"
-//                emptyList.textColor = .gray
-//                emptyList.textAlignment = .center
-//                emptyList.frame = CGRect(x: 0, y: view.frame.size.height / 2, width: view.frame.size.width, height: 100)
-//                view.addSubview(emptyList)
-            }
+                
         }
         catch
         {
@@ -64,12 +57,9 @@ class CalenderViewController: UIViewController, FSCalendarDelegate, UICollection
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        let dateFormat = DateFormatter()
-        dateFormat.dateStyle = .medium
+        transactionCalendars.removeAll()
         
-        let selectedDate = dateFormat.string(from: date)
-        
-        print("\(selectedDate)")
+        getTransactionByCalendar(selectedDate: date)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -80,23 +70,35 @@ class CalenderViewController: UIViewController, FSCalendarDelegate, UICollection
         
         let lay = collectionViewLayout as! UICollectionViewFlowLayout
         let widthPerItem = collectionView.frame.width - lay.minimumInteritemSpacing
-        return CGSize(width: widthPerItem, height: 80)
+        return CGSize(width: widthPerItem, height: 90)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return transactions.count
+        return transactionCalendars.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "transaction_calendar_cell", for: indexPath) as! TransactionCalendarCell
-        let transaction = transactions[indexPath.row]
+        let transaction = transactionCalendars[indexPath.row]
         
         cell.backgroundColor = .systemGray6
         cell.layer.cornerRadius = 15
         
         cell.transactionCalendarName.text = transaction.transactionName
-        cell.transactionCalendarBudget.text = transaction.transactionDescription
-        cell.transactionCalendarDate.text = transaction.transactionStatus
+        
+        let transactionBudgetNumberFormat = CustomElements.formatNumber(transaction.transactionBudget)
+        cell.transactionCalendarBudget.text = "Rp. \(transactionBudgetNumberFormat)"
+        
+        if(transaction.transactionStatus == "Good") {
+            cell.transactionCalendarBudget.textColor = .systemGreen
+        } else {
+            cell.transactionCalendarBudget.textColor = .systemRed
+        }
+        
+        let dateFormat = DateFormatter()
+        dateFormat.dateStyle = .medium
+        
+        cell.transactionCalendarDate.text = dateFormat.string(from: transaction.transactionDate!)
         
         return cell
     }
@@ -132,6 +134,36 @@ class CalenderViewController: UIViewController, FSCalendarDelegate, UICollection
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "add_transaction") as! AddTransactionViewController
                 self.navigationController?.pushViewController(vc, animated: true)
             }
+        }
+    }
+    
+    func getTransactionByCalendar(selectedDate: Date) {
+        if(transactions.isEmpty) {
+            emptyTransactionLabel.isHidden = false
+            transactionCollectionView.isHidden = true
+        } else {
+            let dateFormat = DateFormatter()
+            dateFormat.dateStyle = .medium
+            
+            let dateCalendar = dateFormat.string(from: selectedDate)
+            
+            for transaction in transactions {
+                
+                let transactionDate = dateFormat.string(from: transaction.transactionDate!)
+                if(dateCalendar == transactionDate){
+                    transactionCalendars.append(transaction)
+                    break
+                }
+            }
+            
+            if(!transactionCalendars.isEmpty) {
+                emptyTransactionLabel.isHidden = true
+                transactionCollectionView.isHidden = false
+            } else {
+                emptyTransactionLabel.isHidden = false
+                transactionCollectionView.isHidden = true
+            }
+            transactionCollectionView.reloadData()
         }
     }
 }
