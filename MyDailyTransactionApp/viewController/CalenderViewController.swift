@@ -5,9 +5,13 @@
 //  Created by Uray Muhamad Noor Fajri Widiansyah on 27/04/22.
 //
 
+import FSCalendar
 import UIKit
 
-class CalenderViewController: UIViewController {
+class CalenderViewController: UIViewController, FSCalendarDelegate {
+    
+    
+    @IBOutlet weak var calendar: FSCalendar!
     
     private var transactions = [Transaction]()
     
@@ -15,8 +19,18 @@ class CalenderViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        calendar.delegate = self
 
-        // Do any additional setup after loading the view.
+    }
+    
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        let dateFormat = DateFormatter()
+        dateFormat.dateStyle = .medium
+        
+        let selectedDate = dateFormat.string(from: date)
+        
+        print("\(selectedDate)")
     }
     
     @IBAction func addButtonTapped(_ sender: Any) {

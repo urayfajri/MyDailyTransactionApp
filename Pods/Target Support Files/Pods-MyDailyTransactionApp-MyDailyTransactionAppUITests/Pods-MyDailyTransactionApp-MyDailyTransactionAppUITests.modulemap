@@ -1,0 +1,6 @@
+framework module Pods_MyDailyTransactionApp_MyDailyTransactionAppUITests {
+  umbrella header "Pods-MyDailyTransactionApp-MyDailyTransactionAppUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
