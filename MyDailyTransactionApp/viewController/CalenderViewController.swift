@@ -13,10 +13,12 @@ class CalenderViewController: UIViewController, FSCalendarDelegate, UICollection
     
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var transactionCollectionView: UICollectionView!
-    @IBOutlet weak var emptyTransactionLabel: UILabel!
     
+    @IBOutlet weak var emptyTransactionTitleLabel: UILabel!
+    @IBOutlet weak var emptyTransactionLabel: UILabel!
     private var transactions = [Transaction]()
     private var transactionCalendars = [Transaction]()
+    private var selectedDate = Date()
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
@@ -26,7 +28,7 @@ class CalenderViewController: UIViewController, FSCalendarDelegate, UICollection
         getAllTransactions()
         
         //get transaction for today
-        getTransactionByCalendar(selectedDate: Date())
+        getTransactionByCalendar(selectedDate: selectedDate)
         
         calendar.delegate = self
         
@@ -39,6 +41,13 @@ class CalenderViewController: UIViewController, FSCalendarDelegate, UICollection
         transactionLayout.minimumInteritemSpacing = 10
         transactionCollectionView.setCollectionViewLayout(transactionLayout, animated: true)
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getAllTransactions()
+        
+        transactionCalendars.removeAll()
+        getTransactionByCalendar(selectedDate: selectedDate)
     }
     
     func getAllTransactions(){
@@ -59,6 +68,7 @@ class CalenderViewController: UIViewController, FSCalendarDelegate, UICollection
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         transactionCalendars.removeAll()
         
+        selectedDate = date
         getTransactionByCalendar(selectedDate: date)
     }
     
@@ -103,6 +113,32 @@ class CalenderViewController: UIViewController, FSCalendarDelegate, UICollection
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let transaction = transactionCalendars[indexPath.row]
+        let sheet = UIAlertController(title: "Action for Transaction", message: nil, preferredStyle: .actionSheet)
+        sheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        sheet.addAction(UIAlertAction(title: "See Detail", style: .default, handler: {_ in
+
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "transaction_detail") as! DetailTransactionViewController
+            vc.transaction = transaction
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }))
+        sheet.addAction(UIAlertAction(title: "Edit", style: .default, handler: {_ in
+            
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "edit_transaction") as! EditTransactionViewController
+            vc.transaction = transaction
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }))
+        
+        sheet.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: {[weak self]_ in
+             self?.deleteTransaction(transaction: transaction)
+        }))
+        
+        present(sheet, animated: true)
+    }
+    
     @IBAction func addButtonTapped(_ sender: Any) {
         if (transactions.isEmpty) {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "add_transaction") as! AddTransactionViewController
@@ -139,6 +175,7 @@ class CalenderViewController: UIViewController, FSCalendarDelegate, UICollection
     
     func getTransactionByCalendar(selectedDate: Date) {
         if(transactions.isEmpty) {
+            emptyTransactionTitleLabel.isHidden = false
             emptyTransactionLabel.isHidden = false
             transactionCollectionView.isHidden = true
         } else {
@@ -146,6 +183,8 @@ class CalenderViewController: UIViewController, FSCalendarDelegate, UICollection
             dateFormat.dateStyle = .medium
             
             let dateCalendar = dateFormat.string(from: selectedDate)
+            
+            let todayDate = dateFormat.string(from: Date())
             
             for transaction in transactions {
                 
@@ -157,13 +196,39 @@ class CalenderViewController: UIViewController, FSCalendarDelegate, UICollection
             }
             
             if(!transactionCalendars.isEmpty) {
+                emptyTransactionTitleLabel.isHidden = true
                 emptyTransactionLabel.isHidden = true
                 transactionCollectionView.isHidden = false
             } else {
+                emptyTransactionTitleLabel.isHidden = false
                 emptyTransactionLabel.isHidden = false
                 transactionCollectionView.isHidden = true
+                
+                if(todayDate == dateCalendar) {
+                    emptyTransactionLabel.text = "for today"
+                } else {
+                    emptyTransactionLabel.text = "on \(dateCalendar)"
+                }
             }
             transactionCollectionView.reloadData()
+        }
+    }
+    
+    func deleteTransaction(transaction: Transaction)
+    {
+        context.delete(transaction)
+        
+        do
+        {
+            try context.save()
+            getAllTransactions()
+            
+            transactionCalendars.removeAll()
+            getTransactionByCalendar(selectedDate: selectedDate)
+        }
+        catch
+        {
+
         }
     }
 }

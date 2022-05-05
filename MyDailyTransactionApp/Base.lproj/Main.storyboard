@@ -313,16 +313,22 @@
                                 <rect key="frame" x="20" y="442" width="374" height="400"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HH4-aG-n46">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="120.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="141"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don't have any transaction for today" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MrM-oh-sFU">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don't have any transaction" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYe-Eb-iqi">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="on Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MrM-oh-sFU">
+                                                <rect key="frame" x="0.0" y="20.5" width="374" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iq1-lk-U3g">
-                                                <rect key="frame" x="0.0" y="20.5" width="374" height="100"/>
+                                                <rect key="frame" x="0.0" y="41" width="374" height="100"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="f9u-nl-fy3"/>
@@ -420,6 +426,7 @@
                     <connections>
                         <outlet property="calendar" destination="jHE-H2-Er0" id="fdP-TS-Hy0"/>
                         <outlet property="emptyTransactionLabel" destination="MrM-oh-sFU" id="U81-tG-hWq"/>
+                        <outlet property="emptyTransactionTitleLabel" destination="aYe-Eb-iqi" id="onl-Ki-xas"/>
                         <outlet property="transactionCollectionView" destination="iq1-lk-U3g" id="EEL-KZ-pha"/>
                     </connections>
                 </viewController>
