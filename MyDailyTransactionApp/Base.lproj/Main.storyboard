@@ -296,15 +296,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jHE-H2-Er0" customClass="FSCalendar">
-                                <rect key="frame" x="10" y="88" width="394" height="300"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="z5J-aU-JjQ"/>
-                                </constraints>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Transaction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4H-dG-5qv">
                                 <rect key="frame" x="20" y="408" width="374" height="25.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25.5" id="4a4-9H-POj"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -401,18 +397,27 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="BgY-T6-NdG"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="6jf-d3-cCj"/>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lV3-Ra-aiR" customClass="FSCalendar">
+                                <rect key="frame" x="20" y="88" width="374" height="300"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="dYZ-ow-hkm"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1EM-3M-YPm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="U4H-dG-5qv" firstAttribute="leading" secondItem="1EM-3M-YPm" secondAttribute="leading" constant="20" id="2Qh-kt-kqk"/>
-                            <constraint firstItem="U4H-dG-5qv" firstAttribute="top" secondItem="jHE-H2-Er0" secondAttribute="bottom" constant="20" id="4mO-vn-KGg"/>
-                            <constraint firstItem="1EM-3M-YPm" firstAttribute="trailing" secondItem="jHE-H2-Er0" secondAttribute="trailing" constant="10" id="5ne-AR-PEG"/>
+                            <constraint firstItem="U4H-dG-5qv" firstAttribute="leading" secondItem="1EM-3M-YPm" secondAttribute="leading" constant="20" id="4ca-F4-zga"/>
+                            <constraint firstItem="1EM-3M-YPm" firstAttribute="trailing" secondItem="U4H-dG-5qv" secondAttribute="trailing" constant="20" id="5W2-51-y8S"/>
                             <constraint firstItem="6A7-98-Mec" firstAttribute="leading" secondItem="1EM-3M-YPm" secondAttribute="leading" constant="20" id="5rE-SG-CUK"/>
-                            <constraint firstItem="jHE-H2-Er0" firstAttribute="leading" secondItem="1EM-3M-YPm" secondAttribute="leading" constant="10" id="C1v-71-Sx0"/>
-                            <constraint firstItem="jHE-H2-Er0" firstAttribute="top" secondItem="1EM-3M-YPm" secondAttribute="top" id="XN1-tj-x0G"/>
+                            <constraint firstItem="1EM-3M-YPm" firstAttribute="trailing" secondItem="lV3-Ra-aiR" secondAttribute="trailing" constant="20" id="79i-xq-daH"/>
+                            <constraint firstItem="lV3-Ra-aiR" firstAttribute="top" secondItem="1EM-3M-YPm" secondAttribute="top" id="WFl-ux-D9A"/>
                             <constraint firstItem="1EM-3M-YPm" firstAttribute="trailing" secondItem="U4H-dG-5qv" secondAttribute="trailing" constant="20" id="Yio-7K-6hC"/>
+                            <constraint firstItem="lV3-Ra-aiR" firstAttribute="leading" secondItem="1EM-3M-YPm" secondAttribute="leading" constant="20" id="jFl-Uj-F5U"/>
                             <constraint firstItem="1EM-3M-YPm" firstAttribute="trailing" secondItem="6A7-98-Mec" secondAttribute="trailing" constant="20" id="pdQ-dW-Fqx"/>
+                            <constraint firstItem="U4H-dG-5qv" firstAttribute="top" secondItem="lV3-Ra-aiR" secondAttribute="bottom" constant="20" id="v7a-Ez-fhu"/>
                             <constraint firstItem="6A7-98-Mec" firstAttribute="top" secondItem="U4H-dG-5qv" secondAttribute="bottom" constant="8.5" id="vkg-5W-H7q"/>
                         </constraints>
                     </view>
@@ -424,7 +429,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="calendar" destination="jHE-H2-Er0" id="fdP-TS-Hy0"/>
+                        <outlet property="calendar" destination="lV3-Ra-aiR" id="eat-VA-aEv"/>
                         <outlet property="emptyTransactionLabel" destination="MrM-oh-sFU" id="U81-tG-hWq"/>
                         <outlet property="emptyTransactionTitleLabel" destination="aYe-Eb-iqi" id="onl-Ki-xas"/>
                         <outlet property="transactionCollectionView" destination="iq1-lk-U3g" id="EEL-KZ-pha"/>
