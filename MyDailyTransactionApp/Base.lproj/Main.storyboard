@@ -306,7 +306,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6A7-98-Mec">
-                                <rect key="frame" x="20" y="442" width="374" height="400"/>
+                                <rect key="frame" x="20" y="442" width="374" height="250"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HH4-aG-n46">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="141"/>
@@ -388,7 +388,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="HH4-aG-n46" firstAttribute="top" secondItem="BgY-T6-NdG" secondAttribute="top" id="3ji-dL-wcf"/>
-                                    <constraint firstAttribute="height" constant="400" id="Blx-TN-8hC"/>
+                                    <constraint firstAttribute="height" constant="250" id="Blx-TN-8hC"/>
                                     <constraint firstItem="HH4-aG-n46" firstAttribute="bottom" secondItem="BgY-T6-NdG" secondAttribute="bottom" id="biz-CI-mAh"/>
                                     <constraint firstItem="HH4-aG-n46" firstAttribute="width" secondItem="6jf-d3-cCj" secondAttribute="width" id="rOa-Jd-2lC"/>
                                     <constraint firstItem="HH4-aG-n46" firstAttribute="leading" secondItem="BgY-T6-NdG" secondAttribute="leading" id="rUj-il-PwY"/>
